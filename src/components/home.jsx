@@ -6,6 +6,7 @@ import { HeaderMenu } from "./header";
 //import WebContent from './content';
 
 export const Home = (props) => {
+    console.log("prop.header", props.header)
     /* const HomeBlock = (props) => {
         return (
             <Box className={'ni-layout-home-block'} >
@@ -35,6 +36,7 @@ export const Home = (props) => {
     return (
         //(props.home === undefined) ? 
             //<Messenger message={'loader'} /> :
+            //console.log("prop.header", props.header)
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 

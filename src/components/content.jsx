@@ -26,7 +26,6 @@ export const WebContent = (props) => {
     const alterClass = (props.alterClassHint === undefined) ? '' : `-${props.alterClassHint}`;
 
     const WebAsset = (props) => {
-        console.log("props.element: ",props.element)
         if (props.element.link === '') {
             return (
                 <img src={props.element.file[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
@@ -43,7 +42,7 @@ export const WebContent = (props) => {
     const WebList = (props) => {
         return (
             props.info?.map((element) => {
-                //console.log(element)
+                console.log("element: ",element)
                 switch (element.type) {
                     case 'Text':
                         return (<span key={element.key} className={`ni-layout${alterClass}-text${styleClass}`}>{element.translation}</span>);

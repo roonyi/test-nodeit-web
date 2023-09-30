@@ -12,10 +12,8 @@ export const buildWebDetail = (boardDetail) => {
             publish: getColumnValue('Publish', item.column_values, item.assets),
             detail: readContentDetail(item.subitems, subitemMap)
         };
-        console.log("content: ", content)
         updateDetailMap(result, content, 'group');
     });
-    console.log("result2: ", result)
     return result;
 }
 
@@ -81,6 +79,7 @@ const mapSubitems = (subitems) => {
                 render: getColumnValue('Render', subitem.column_values, subitem.assets),
                 sequence: getColumnValue('Sequence', subitem.column_values, subitem.assets),
                 content: getColumnValue('Content', subitem.column_values, subitem.assets),
+                link: getColumnValue('Link', subitem.column_values, subitem.assets),
                 files: getColumnValue('Files', subitem.column_values, subitem.assets),
                 group: getColumnValue('Group', subitem.column_values, subitem.assets)            };
             result.set(subitem.id, data);
