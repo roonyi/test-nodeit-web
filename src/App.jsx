@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchServerData } from '/src/helpers/mondayData';
 import { buildWebDetail } from '/src/helpers/viewHelper';
-//import { Home } from '/src/components/home';
+import { Home } from '/src/components/home';
 //import { Product } from '/src/components/product';
 //import { Solutions } from '/src/components/solutions';
 //import { Pricing } from '/src/components/pricing';
@@ -41,16 +41,16 @@ function App() {
   
   return (
     <BrowserRouter>
-{/*       <Routes>
+       <Routes>
         <Route path="/" element={<Home header={detail?.header} footer={detail?.footer} home={detail?.home} />} />
-        <Route path="/product" element={<Product header={detail?.header} footer={detail?.footer} product={detail?.product} />} />
+{/*        <Route path="/product" element={<Product header={detail?.header} footer={detail?.footer} product={detail?.product} />} />
         <Route path="/solutions" element={<Solutions header={detail?.header} footer={detail?.footer} solutions={detail?.solutions} />} />
         <Route path="/pricing" element={<Pricing header={detail?.header} footer={detail?.footer} pricing={detail?.pricing} />}/>
         <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />}   />
         <Route path="/privacy" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={'privacy'} />}/>
         <Route path="/contact" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={'contact'} />} />
-        <Route path="*" element={<Messenger message={'notFound'} />} />
-      </Routes> */}
+        <Route path="*" element={<Messenger message={'notFound'} />} /> */}
+      </Routes>
     </BrowserRouter>
   );
 }

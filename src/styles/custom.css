@@ -1,35 +1,397 @@
 /* Main measutements and pallette */
 :root {
-    --number-main-max-width: 1280px;
-    --number-menu-image-height: 2rem;
-    --number-menu-padding: 24px;
-    --number-block-padding: 8px;
-    --number-home-padding: 48px;
-    --number-layout-title: 50px;
-    --number-layout-subtitle: 24px;
-    --number-layout-content-padding: 20%;
-    --number-layout-modal-title: 75px;
-    --number-product-padding: 24px;
-    --number-product-logo-height: 2rem;
-    --number-solution-padding: 48px;
-    --number-layout-faq-title: 36px;
-    --number-list-padding: 36px;
-    --number-messenger-logo-height: 2rem;
-    --number-solutions-grid-gap: 24px;
-    --number-solutions-logo-height: 96px;
-    --number-solutions-logo-offset: calc(-1*50% + var(--number-solutions-logo-height) * 0.5);
-    --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3);
-    --color-theme-main-foreground: var(--primary-text-color);
-    --color-theme-main-background: var(--primary-background-color);
-    --color-theme-basic-color1: #8611ed;
-    --color-theme-basic-color2: #5ff3a0;
-    --color-theme-basic-color3: #42d7e2;
-    --color-theme-basic-color4: #919191;
-    --color-theme-alter-color1: #520794;
-    --color-theme-alter-color2: #50e190;
-    --color-theme-alter-color3: #fbb844;
-    --color-theme-alter-color4: #313131;
-    --color-theme-modif-shade1: #fff9;
-    --color-theme-modif-shade2: #5ff3a0ff;
-    --color-theme-modif-shade3: #50e190ff;
-  }
+  --number-main-max-width: 1280px;
+  --number-menu-image-height: 2rem;
+  --number-menu-padding: 24px;
+  --number-block-padding: 8px;
+  --number-home-padding: 48px;
+  --number-layout-title: 50px;
+  --number-layout-subtitle: 24px;
+  --number-layout-content-padding: 20%;
+  --number-layout-modal-title: 75px;
+  --number-product-padding: 24px;
+  --number-product-logo-height: 2rem;
+  --number-solution-padding: 48px;
+  --number-layout-faq-title: 36px;
+  --number-list-padding: 36px;
+  --number-messenger-logo-height: 2rem;
+  --number-solutions-grid-gap: 24px;
+  --number-solutions-logo-height: 96px;
+  --number-solutions-logo-offset: calc(-1*50% + var(--number-solutions-logo-height) * 0.5);
+  --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3);
+  --color-theme-main-foreground: var(--primary-text-color);
+  --color-theme-main-background: var(--primary-background-color);
+  --color-theme-basic-color1: #8611ed;
+  --color-theme-basic-color2: #5ff3a0;
+  --color-theme-basic-color3: #42d7e2;
+  --color-theme-basic-color4: #919191;
+  --color-theme-alter-color1: #520794;
+  --color-theme-alter-color2: #50e190;
+  --color-theme-alter-color3: #fbb844;
+  --color-theme-alter-color4: #313131;
+  --color-theme-modif-shade1: #fff9;
+  --color-theme-modif-shade2: #5ff3a0ff;
+  --color-theme-modif-shade3: #50e190ff;
+}
+
+/* Additional custom variables */
+:root {
+  --asset-home-bg-left: url('/src/assets/images/home-bg-left.png');
+  --asset-home-bg-right: url('/src/assets/images/home-bg-right.png');
+  --asset-home-bg-light: url('/src/assets/images/home-bg-light.svg');
+}
+
+/* Genetal style (visual structure) */
+:root body {
+  background-color: var(--color-theme-main-background);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+:root .ni-horizontal-container {
+  height: 100%;
+}
+
+:root .ni-vertical-container {
+  width: 100%;
+}
+
+:root .ni-full-container {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  padding: 0px !important;
+  max-width: var(--number-main-max-width);
+  min-height: 100vh;
+}
+
+/* General style (custom components) */
+:root .ni-layout-bar {
+  background-color: var(--color-theme-alter-color1);
+  padding: var(--number-menu-padding);
+  color: var(--color-theme-main-foreground);
+  width: 100%;
+}
+
+:root .ni-layout-bar-link {
+  color: var(--color-theme-main-background);
+  padding: var(--number-block-padding);
+}
+
+:root .ni-layout-bar-text {
+  color: var(--color-theme-main-background);
+  padding: var(--number-block-padding);
+}
+
+:root .ni-layout-bar-image {
+  height: var(--number-menu-image-height);
+  object-fit: cover;
+}
+
+:root .ni-layout-title {
+  margin: 0px;
+  font-size: var(--number-layout-title);
+  font-weight: bolder; 
+  width: 100%;
+}
+
+:root .ni-layout-subtitle {
+  color: var(--color-theme-basic-color4);
+  margin: 0px;
+  font-size: var(--number-layout-subtitle);
+  font-weight: bolder; 
+}
+
+:root .ni-layout-logo {
+  height: var(--number-product-logo-height);
+}
+
+:root .ni-layout-image {
+  max-width: 100%;
+  opacity: 0.75;
+}
+
+:root .ni-layout-image:hover {
+  opacity: 1;
+}
+
+:root .ni-layout-text {
+  color: var(--color-theme-main-background);
+  margin: 0px;
+  white-space: pre-line;
+  text-align: left;
+  font-size: large;
+}
+
+:root .ni-layout-main,
+:root .ni-layout-highlight,
+:root .ni-layout-solutions-grid {
+  width: 100%;
+  margin: 0px;
+  padding-top: var(--number-product-padding);
+  padding-bottom: var(--number-product-padding);
+}
+
+:root .ni-layout-highlight {
+  padding-right: 40% !important;
+  background-color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-main .ni-layout-title {
+  color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-highlight .ni-layout-title {
+  color: var(--color-theme-basic-color2);
+  text-align: left;
+}
+
+:root .ni-layout-list {
+  padding-bottom: var(--number-list-padding);
+}
+
+/* Common style attributes */
+:root .ni-layout-home, 
+:root .ni-layout-product,
+:root .ni-layout-solutions {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+
+:root .ni-layout-home-block,
+:root .ni-layout-product-info,
+:root .ni-layout-solutions-info,
+:root .ni-layout-faq-list {
+  width: 100%;
+}
+
+:root .ni-layout-home-intro,
+:root .ni-layout-product-info,
+:root .ni-layout-solutions-info,
+:root .ni-layout-faq-list {
+  margin: 0px;
+  font-family: Comfortaa;
+}
+
+:root .ni-layout-home-intro,
+:root .ni-layout-main,
+:root .ni-layout-highlight,
+:root .ni-layout-intro,
+:root .ni-layout-solutions-grid,
+:root .ni-layout-list {
+  padding-left: var(--number-layout-content-padding);
+  padding-right: var(--number-layout-content-padding);
+}
+
+:root .ni-layout-product-info,
+:root .ni-layout-solutions-info,
+:root .ni-layout-faq-list {
+  color: var(--color-theme-main-foreground);
+  background-color: var(--color-theme-main-background);
+}
+
+/* Header - uses general style */
+
+/* Footer - uses general style*/
+
+/* Home */
+:root .ni-layout-home {
+  height: 100vh;
+  color: var(--color-theme-main-background);
+  background-color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-home-intro {
+  height: 100%;
+  font-size: var(--number-layout-title);
+  font-weight: bolder; 
+  background-image: var(--asset-home-bg-light), var(--asset-home-bg-light), var(--asset-home-bg-left), var(--asset-home-bg-right);
+  background-position-x: -110%, 210%, -45%, 240%;
+  background-position-y: -120%, 320%, top, bottom;
+  background-size: 60%, 60%, 50%, 75%;
+  background-repeat: no-repeat;
+}
+
+:root .ni-home-button {
+  background-color: var(--color-theme-modif-shade1);
+  color: var(--color-theme-main-background);
+  font-weight: bold;
+}
+
+:root .ni-home-button:hover {
+  background-color: var(--color-theme-main-background);
+  color: var(--color-theme-basic-color1);
+}
+
+/* Product - uses general style */
+
+/* Solutions (card, grid and modal) */
+:root .ni-layout-solutions-grid {
+  width: 100%;
+}
+
+:root .ni-layout-clickable {
+  width: var(--number-solutions-card-width);
+  margin: 0px;
+  padding: 0px;
+}
+
+:root .ni-layout-solutions-card {
+  width: 100%;
+  background-color: var(--color-theme-alter-color2);
+  background-image: linear-gradient(45deg, var(--color-theme-modif-shade2), var(--color-theme-modif-shade3));
+}
+
+:root .ni-layout-solutions-card:hover {
+  background-image: linear-gradient(45deg, var(--color-theme-modif-shade3), var(--color-theme-modif-shade2));
+}
+
+:root .ni-layout-solutions-card .ni-layout-logo {
+  height: var(--number-solutions-logo-height);
+  margin: var(--number-block-padding);
+  padding: var(--number-block-padding);
+  opacity: 1;
+}
+
+:root .ni-layout-solutions-card .ni-layout-title {
+  font-size: larger;
+  font-weight: bolder;
+  color: var(--color-theme-alter-color1);
+}
+
+:root .ni-layout-solutions-modal-footer {
+  align-items: flex-end;
+}
+
+:root .ni-layout-solutions-modal {
+  color: var(--color-theme-main-foreground);
+  background-color: var(--color-theme-main-background);
+  font-size: large;
+}
+
+:root .ni-layout-solutions-modal .ni-layout-text {
+  color: var(--color-theme-main-foreground);
+}
+
+:root .ni-layout-solutions-modal .highlight-text {
+  color: var(--color-theme-basic-color1);
+  font-style: normal;
+  font-weight: bolder;
+  background-color: inherit;
+}
+
+:root .ni-layout-solutions-modal .ni-layout-logo {
+  height: var(--number-solutions-logo-height);
+  object-fit: contain;
+  opacity: 1;
+  transform: translateX(var(--number-solutions-logo-offset));
+}
+
+:root .ni-layout-solutions-modal .ni-layout-highlight {
+  background-image: var(--asset-home-bg-light), var(--asset-home-bg-left);
+  background-position-x: -25%, 90%;
+  background-position-y: center, center;
+  background-size: 25%, 23%;
+  background-repeat: no-repeat;
+  padding-bottom: var(--number-solution-padding) !important;
+}
+
+:root .ni-layout-solutions-modal .ni-layout-intro .ni-layout-title {
+  font-weight: bolder;
+  font-size: var(--number-layout-modal-title);
+  text-transform: uppercase;
+  color: var(--color-theme-alter-color2);
+}
+
+:root .ni-layout-solutions-modal .ni-layout-highlight .ni-layout-title {
+  font-weight: bolder;
+  color: var(--color-theme-main-background);
+}
+
+:root .ni-layout-solutions-modal .ni-layout-highlight .ni-layout-text {
+  color: var(--color-theme-main-background);
+}
+
+:root .ni-modal-footer-button {
+  background-color: var(--color-theme-basic-color1) !important;
+  color: var(--color-theme-main-background) !important;
+  font-weight: normal;
+}
+
+:root .ni-modal-footer-button:hover {
+  background-color: var(--color-theme-alter-color1) !important;
+  color: var(--color-theme-main-background) !important;
+}
+
+/* FAQ */
+:root .ni-layout-faq-list .ni-layout-list .ni-layout-title {
+  font-weight: bolder;
+  font-size: var(--number-layout-faq-title);
+  color: var(--color-theme-main-foreground);
+  text-align: left;
+}
+
+:root .ni-layout-faq-list .ni-layout-list .ni-layout-text {
+  color: var(--color-theme-alter-color4);
+  text-align: left;
+}
+
+/* Messenger */
+:root .ni-messenger-loader,
+:root .ni-messenger-notFound {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+:root .ni-messenger-loader {
+  background-image: url('/src/assets/images/loader-bg.svg');
+}
+
+:root .ni-messenger-notFound {
+  background-image: url('/src/assets/images/notFound-bg.svg');
+}
+
+:root .ni-messenger-text {
+  font-family: Comfortaa;
+  font-size: larger;
+  color: var(--color-theme-main-background);
+}
+
+:root .ni-messenger-logo {
+  height: var(--number-messenger-logo-height);
+  object-fit: cover;
+  text-align: left;
+  object-position: left;
+}
+
+/* Workdoc */
+:root .ni-layout-workdoc {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+
+:root .ni-layout-workdoc-info {
+  height: 100%;
+  width: 100%;
+}
+
+/* Hide browser scrollbar to keep visual strcuture */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+/* Correct icon alignment in modal title */
+:root span[class^="ModalHeader-module_icon"] {
+  vertical-align: top;
+}
