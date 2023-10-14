@@ -5,10 +5,10 @@ export const HeaderMenu = (props) => {
     const MenuBar = (props) => {
         console.log("props.fixed en MenuBar: ",props.fixed)
         //props.fixed?.detail?.map((blocks) => {
-            props.fixed?.components?.map((blocks) => {
+        //    props.fixed?.logo.component?.map((blocks) => {
             //console.log("props.fixed en MenuBar key: ",blocks.id)
-            console.log("props.fixed.detail en MenuBar detail: ",blocks.detail)
-        }) 
+        //    console.log("props.fixed.detail en MenuBar detail: ",blocks)
+        //}) 
         return (
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
@@ -24,10 +24,10 @@ export const HeaderMenu = (props) => {
 
     const MenuBlock = (props) => {
         //console.log("props.detail en MenuBlock: ", props.detail)
-        console.log("props.detail en MenuBlock: ", props.components)
+        console.log("props.detail en MenuBlock: ", props.component)
         return (
             <Box className={'ni-layout-block'} >
-                <WebContent info={/*props.detail*/ props.components} alterClassHint={'bar'} />
+                <WebContent info={/*props.detail*/ props.component} alterClassHint={'bar'} />
             </Box>
         );
     }
