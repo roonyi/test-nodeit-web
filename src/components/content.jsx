@@ -61,7 +61,7 @@ export const WebContent = (props) => {
                     case 'Link':
                         return (
                             <RouteLink key={element.key} to={element.link} state={{entry: element}} className={`ni-layout${alterClass}-link${styleClass}`} >
-                                {element.translation}
+                                {element.name}
                             </RouteLink>
                         );
                     case 'Asset':

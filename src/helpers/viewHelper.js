@@ -6,14 +6,17 @@ export const buildWebDetail = (boardDetail) => {
         const content = {
             id: item.id,
             title: item.name, 
-            group: getGroupTitle(boardDetail.board, item.group.id),
+            //group: getGroupTitle(boardDetail.board, item.group.id),
+            page: getGroupTitle(boardDetail.board, item.group.id),
             type: getColumnValue('Type', item.column_values, item.assets),
             scope: getColumnValue('Scope', item.column_values, item.assets),
             publish: getColumnValue('Publish', item.column_values, item.assets),
-            detail: readContentDetail(item.subitems, subitemMap)
+            component: readContentDetail(item.subitems, subitemMap)
         };
-        updateDetailMap(result, content, 'group');
+        //updateDetailMap(result, content, 'group');
+        updateDetailMap(result, content, 'page', 'title');
     });
+    console.log('web detail: ', result);
     return result;
 }
 
@@ -34,7 +37,7 @@ const orderContentDetail = (detail) => {
         updated[element[0]] = element[1];
     });
     
-    return updated;
+    return {...updated};
 }
 
 const readContentDetail = (subitems, map) => {
@@ -44,12 +47,13 @@ const readContentDetail = (subitems, map) => {
         updateDetailMap(detail, data, 'group');
     });
 
-    return orderContentDetail(detail);
+    //return orderContentDetail(detail);
+    return detail;
 }
 
 // it creates de detail?.header and detail?.footer
-const updateDetailMap = (rootMap, item, key, subKey=undefined) => {
-    const element = rootMap[item[key].toLowerCase()];
+const updateDetailMap = (rootMap, item, key, subKey = undefined) => {
+    /*const element = rootMap[item[key].toLowerCase()];
     if (element !== undefined) {
         if (subKey !== undefined) {
             updateDetailMap(element, item, subKey);
@@ -64,6 +68,24 @@ const updateDetailMap = (rootMap, item, key, subKey=undefined) => {
             rootMap[item[key].toLowerCase()] = subItem;
         } else {
             rootMap[item[key].toLowerCase()] = [item];
+        }
+    }*/
+    const itemKey = item[key] === '' ? 'elements' : item[key].toLowerCase();
+    const itemSubkey = (item[subKey] ?? '') === '' ? 'groups' : item[subKey].toLowerCase();
+    const element = rootMap[itemKey];
+    if (element !== undefined) {
+        if (subKey === undefined) {
+            element.push(item);
+            //element.sort(sortBySeq);
+        } else {
+            rootMap[itemKey][itemSubkey] = item;
+        }
+    } else {
+        if (subKey === undefined) {
+            rootMap[itemKey] = [item];
+        } else {
+            rootMap[itemKey] = {};
+            rootMap[itemKey][itemSubkey] = item;
         }
     }
 }
@@ -81,7 +103,8 @@ const mapSubitems = (subitems) => {
                 content: getColumnValue('Content', subitem.column_values, subitem.assets),
                 link: getColumnValue('Link', subitem.column_values, subitem.assets),
                 files: getColumnValue('Files', subitem.column_values, subitem.assets),
-                group: getColumnValue('Group', subitem.column_values, subitem.assets)            };
+                group: getColumnValue('Group', subitem.column_values, subitem.assets)
+            };
             result.set(subitem.id, data);
         }
     });
