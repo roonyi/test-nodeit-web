@@ -4,9 +4,9 @@ import { WebContent } from './content';
 export const HeaderMenu = (props) => {
     const MenuBar = (props) => {
         console.log("props.fixed en MenuBar: ",props.fixed)
-        props.fixed?.detail?.map((blocks) => {
+        props.fixed?.map((blocks) => {
             //console.log("props.fixed en MenuBar key: ",blocks.id)
-            console.log("props.fixed.detail en MenuBar detail: ",blocks.logo)
+            console.log("props.fixed.detail en MenuBar detail: ",blocks.detail)
         }) 
         return (
             <Flex
@@ -21,10 +21,11 @@ export const HeaderMenu = (props) => {
                     }) */
                     props.fixed?.map((blocks) => {
                         return(
-                        <Box className={'ni-layout-block'} >
-                            <WebContent info={blocks.detail.logo} alterClassHint={'bar'} />
-                            <WebContent info={blocks.detail.headerlinks} alterClassHint={'bar'} />
-                            {/* <WebContent info={blocks.logo} alterClassHint={'bar'} /> */}
+                        <Box className={'ni-layout-block'} key={blocks.detail.id}>
+                            <WebContent info={blocks.logo} alterClassHint={'bar'} />
+                            <WebContent info={blocks.headerlinks} alterClassHint={'bar'} />
+                            {/* <WebContent info={blocks.detail.headerlinks} alterClassHint={'bar'} />
+                             <WebContent info={blocks.logo} alterClassHint={'bar'} /> */}
                         </Box>);
                     })
                 }
