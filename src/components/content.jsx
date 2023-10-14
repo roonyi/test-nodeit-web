@@ -24,26 +24,27 @@ export const WebGroup = (props) => {
 export const WebContent = (props) => {
     const styleClass = (props.contentClassName === undefined) ? '' : ` ${props.contentClassName}`;
     const alterClass = (props.alterClassHint === undefined) ? '' : `-${props.alterClassHint}`;
-
+    console.log("props.info in weblist content: ", props.info)
     const WebAsset = (props) => {
+        console.log("props.element in content: ", props.element)
         if (props.element.link === '') {
             return (
-                <img src={props.element.file[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
+                <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
             )
         } else {
             return (
                 <RouteLink to={props.element.link}>
-                    <img src={props.element.file[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
+                    <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
                 </RouteLink>
             )
         }
     }
 
     const WebList = (props) => {
+        console.log("props.info.detail in weblist content: ", props.info)
         return (
             props.info?.map((element) => {
-                console.log("element: ",element)
-                switch (element.type) {
+                switch (element.render) {
                     case 'Text':
                         return (<span key={element.key} className={`ni-layout${alterClass}-text${styleClass}`}>{element.translation}</span>);
                     case 'Title':
@@ -57,7 +58,7 @@ export const WebContent = (props) => {
                             highlightTerm={t('solutions.modal.highlight')}
                             text={element.translation}
                           />);
-;                    case 'Link':
+                    case 'Link':
                         return (
                             <RouteLink key={element.key} to={element.link} state={{entry: element}} className={`ni-layout${alterClass}-link${styleClass}`} >
                                 {element.translation}
@@ -81,7 +82,7 @@ export const WebContent = (props) => {
             })
         );
     }
-
+    console.log("props.info in weblist content: ", props.info)
     return (
         <WebList {...props} />
     );

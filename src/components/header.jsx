@@ -4,11 +4,10 @@ import { WebContent } from './content';
 export const HeaderMenu = (props) => {
     const MenuBar = (props) => {
         console.log("props.fixed en MenuBar: ",props.fixed)
-        props.fixed?.map((blocks) => {
-            console.log("props.fixed en MenuBar key: ",blocks.id)
-            console.log("props.fixed en MenuBar detail: ",blocks.detail[0])
-            //return <MenuBlock key={blocks.id} detail={blocks.detail?.block} />
-        })
+        props.fixed?.detail?.map((blocks) => {
+            //console.log("props.fixed en MenuBar key: ",blocks.id)
+            console.log("props.fixed.detail en MenuBar detail: ",blocks.logo)
+        }) 
         return (
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
@@ -17,9 +16,16 @@ export const HeaderMenu = (props) => {
                 direction={Flex.directions.ROW} 
                 gap={Flex.gaps.SMALL} >
                 {
+/*                     props.fixed?.map((blocks) => {
+                        return <MenuBlock key={blocks.id} detail={blocks.detail} />
+                    }) */
                     props.fixed?.map((blocks) => {
-                        //return <MenuBlock key={blocks.id} detail={blocks.detail?.block} />
-                        return <MenuBlock key={blocks.id} detail={blocks.detail[1]} />
+                        return(
+                        <Box className={'ni-layout-block'} >
+                            <WebContent info={blocks.detail.logo} alterClassHint={'bar'} />
+                            <WebContent info={blocks.detail.headerlinks} alterClassHint={'bar'} />
+                            {/* <WebContent info={blocks.logo} alterClassHint={'bar'} /> */}
+                        </Box>);
                     })
                 }
             </Flex>
@@ -27,7 +33,7 @@ export const HeaderMenu = (props) => {
     }
 
     const MenuBlock = (props) => {
-        console.log("props.detail en MenuBlock: ",props.detail)
+        console.log("props.detail en MenuBlock: ", props.detail)
         return (
             <Box className={'ni-layout-block'} >
                 <WebContent info={props.detail} alterClassHint={'bar'} />
@@ -36,7 +42,6 @@ export const HeaderMenu = (props) => {
     }
     console.log("props.content en HeaderMenu: ",props.content)
     return (
-        //<MenuBar fixed={props.content?.fixed} /> 
         <MenuBar fixed={props.content} />
     );
 }
