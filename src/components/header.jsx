@@ -4,11 +4,6 @@ import { WebContent } from './content';
 export const HeaderMenu = (props) => {
     const MenuBar = (props) => {
         console.log("props.fixed en MenuBar: ",props.fixed)
-        //props.fixed?.detail?.map((blocks) => {
-        //    props.fixed?.logo.component?.map((blocks) => {
-            //console.log("props.fixed en MenuBar key: ",blocks.id)
-        //    console.log("props.fixed.detail en MenuBar detail: ",blocks)
-        //}) 
         return (
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
@@ -17,20 +12,14 @@ export const HeaderMenu = (props) => {
                 direction={Flex.directions.ROW} 
                 gap={Flex.gaps.SMALL} >
                 <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} />
-                <WebContent info={props.fixed?.links.component?.elements} alterClassHint={'bar'} />
+                <Box className={'ni-layout-block-header'} >    
+                    <WebContent info={props.fixed?.links.component?.elements} alterClassHint={'bar'} />
+                </Box>
+                
             </Flex>
         );
     }
 
-    const MenuBlock = (props) => {
-        //console.log("props.detail en MenuBlock: ", props.detail)
-        console.log("props.detail en MenuBlock: ", props.component)
-        return (
-            <Box className={'ni-layout-block'} >
-                <WebContent info={/*props.detail*/ props.component} alterClassHint={'bar'} />
-            </Box>
-        );
-    }
     console.log("props.content en HeaderMenu: ",props.content)
     return (
         <MenuBar fixed={props.content} />
