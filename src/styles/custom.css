@@ -1,8 +1,8 @@
 /* Main measutements and pallette */
 :root {
   --number-main-max-width: 1280px;
-  --number-menu-image-height: 2rem;
-  --number-menu-padding: 24px;
+  --number-menu-image-height: 5rem;
+  --number-menu-padding: 20px;
   --number-block-padding: 8px;
   --number-home-padding: 48px;
   --number-layout-title: 50px;
@@ -21,11 +21,11 @@
   --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3);
   --color-theme-main-foreground: var(--primary-text-color);
   --color-theme-main-background: var(--primary-background-color);
-  --color-theme-basic-color1: #8611ed;
+  --color-theme-basic-color1: #8511EC;
   --color-theme-basic-color2: #5ff3a0;
   --color-theme-basic-color3: #42d7e2;
   --color-theme-basic-color4: #919191;
-  --color-theme-alter-color1: #520794;
+  --color-theme-alter-color1: #8511EC;
   --color-theme-alter-color2: #50e190;
   --color-theme-alter-color3: #fbb844;
   --color-theme-alter-color4: #313131;
@@ -88,6 +88,10 @@
 :root .ni-layout-bar-image {
   height: var(--number-menu-image-height);
   object-fit: cover;
+}
+
+:root .ni-layout-block-header {
+  text-align: left;
 }
 
 :root .ni-layout-title {

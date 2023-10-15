@@ -6,7 +6,7 @@ import { HeaderMenu } from "./header";
 //import WebContent from './content';
 
 export const Home = (props) => {
-    console.log("prop.header", props.header)
+    console.log("props.header", props.header)
     /* const HomeBlock = (props) => {
         return (
             <Box className={'ni-layout-home-block'} >
