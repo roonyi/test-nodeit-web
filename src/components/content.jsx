@@ -46,17 +46,17 @@ export const WebContent = (props) => {
             props.info?.map((element) => {
                 switch (element.render) {
                     case 'Text':
-                        return (<span key={element.key} className={`ni-layout${alterClass}-text${styleClass}`}>{element.translation}</span>);
+                        return (<span key={element.key} className={`ni-layout${alterClass}-text${styleClass}`}>{element.content}</span>);
                     case 'Title':
-                        return (<p key={element.key} className={`ni-layout${alterClass}-title${styleClass}`}>{element.translation}</p>);
+                        return (<p key={element.key} className={`ni-layout${alterClass}-title${styleClass}`}>{element.content}</p>);
                     case 'Subtitle':
-                        return (<p key={element.key} className={`ni-layout${alterClass}-subtitle${styleClass}`}>{element.translation}</p>);
+                        return (<p key={element.key} className={`ni-layout${alterClass}-subtitle${styleClass}`}>{element.content}</p>);
                     case 'Bullet':
                         return (<TextWithHighlight
                             key={element.key} 
                             className={styleClass}
                             highlightTerm={t('solutions.modal.highlight')}
-                            text={element.translation}
+                            text={element.content}
                           />);
                     case 'Link':
                         return (
@@ -72,7 +72,7 @@ export const WebContent = (props) => {
                         return (
                             <RouteLink key={element.key} to={element.link} >
                                 <Button kind={Button.kinds.SECONDARY} className={'ni-home-button'} >
-                                    {element.translation}
+                                    {element.content}
                                 </Button>
                             </RouteLink>
                         );

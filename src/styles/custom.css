@@ -6,7 +6,7 @@
   --number-block-padding: 8px;
   --number-home-padding: 48px;
   --number-layout-title: 50px;
-  --number-layout-subtitle: 24px;
+  --number-layout-subtitle: 20px;
   --number-layout-content-padding: 20%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
@@ -35,11 +35,11 @@
 }
 
 /* Additional custom variables */
-:root {
+/* :root {
   --asset-home-bg-left: url('/src/assets/images/home-bg-left.png');
   --asset-home-bg-right: url('/src/assets/images/home-bg-right.png');
   --asset-home-bg-light: url('/src/assets/images/home-bg-light.svg');
-}
+} */
 
 /* Genetal style (visual structure) */
 :root body {
