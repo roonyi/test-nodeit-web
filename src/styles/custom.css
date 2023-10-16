@@ -6,7 +6,7 @@
   --number-block-padding: 8px;
   --number-home-padding: 48px;
   --number-layout-title: 50px;
-  --number-layout-subtitle: 20px;
+  --number-layout-subtitle: 25px;
   --number-layout-content-padding: 20%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
@@ -102,7 +102,6 @@
 }
 
 :root .ni-layout-subtitle {
-  color: var(--color-theme-basic-color4);
   margin: 0px;
   font-size: var(--number-layout-subtitle);
   font-weight: bolder; 
@@ -114,7 +113,6 @@
 
 :root .ni-layout-image {
   max-width: 100%;
-  opacity: 0.75;
 }
 
 :root .ni-layout-image:hover {
@@ -154,6 +152,10 @@
 
 :root .ni-layout-list {
   padding-bottom: var(--number-list-padding);
+}
+
+:root .ni-layout-home-block-left {
+  text-align: left;
 }
 
 /* Common style attributes */

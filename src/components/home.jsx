@@ -16,20 +16,26 @@ export const Home = (props) => {
     }
 
     const HomeIntro = (props) => {
-        console.log("props.content?.intro.component?.elements:",props.content?.intro.component?.elements)
+/*        let intros = props.content?.intro.component?.elements
+        console.log("intros: ", intros)
+        console.log ("intros: ", Object.keys(intros))
+        Object.keys(intros).map((key) => {
+            if (intros[key].render !== 'Asset'){
+                console.log("intros_right: ", intros[key].render)
+            }else {
+                console.log("intros_left: ", intros[key].render)
+            }
+        })  */
+        console.log("props.content?.intro_left.component?.elements: ", props.content?.intro_left.component?.elements)
         return (
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                //className={'ni-layout-home-intro'} 
-                direction={Flex.directions.COLUMN} 
+                className={'ni-layout-home-intro'} 
+                direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                {
-                    //props?.content?.map((intros) => {
-                        //return <HomeBlock detail={intros.component.elements} />
-                        <HomeBlock detail={props.content?.intro.component?.elements} />
-                    //})
-                }
+                <HomeBlock detail={props.content?.intro_left.component?.elements} />
+                <HomeBlock detail={props.content?.intro_right.component?.elements} />
             </Flex>
         );
     };
