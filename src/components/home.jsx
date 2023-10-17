@@ -8,7 +8,7 @@ export const Home = (props) => {
     console.log("props.header", props.header)
     const HomeBlock = (props) => {
         return (
-            <Box className={'ni-layout-home-block'} contentClassName={'ni-layout-title-text'} >
+            <Box className={'ni-layout-home-block'}  >
                 <WebContent info={props.detail} />
             </Box>
         );
