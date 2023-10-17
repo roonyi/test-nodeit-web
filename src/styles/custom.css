@@ -219,7 +219,7 @@
   text-align: center;
   font-size: var(--number-layout-title);
   font-weight: bolder; 
-  padding-left: 50px;
+  padding-left: 0px;
   padding-right: 50px;
 /*   background-position-x: -110%, 210%, -45%, 240%;
   background-position-y: -120%, 320%, top, bottom;

@@ -9,7 +9,7 @@ export const Home = (props) => {
     const HomeBlock = (props) => {
         return (
             <Box className={'ni-layout-home-block'}  >
-                <WebContent info={props.detail} />
+                <WebContent info={props.detail}  contentClassName={props.contentClassName}/>
             </Box>
         );
     }
@@ -33,7 +33,7 @@ export const Home = (props) => {
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.intro_left.component?.elements} />
+                <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-title-text'}/>
                 <HomeBlock detail={props.content?.intro_right.component?.elements} />
             </Flex>
         );
