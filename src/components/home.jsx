@@ -40,6 +40,34 @@ export const Home = (props) => {
         );
     };
 
+    const HomeApproach_title = (props) => {
+        console.log("props.content?.approach_title.component?.elements: ", props.content?.approach_title.component?.elements)
+        return (
+            <Flex
+                justify={Flex.justify.CENTER} 
+                align={Flex.justify.CENTER} 
+                className={'ni-layout-home-approach'} 
+                direction={Flex.directions.ROW}
+                gap={Flex.gaps.SMALL} >
+                <HomeBlock detail={props.content?.approach_title.component?.elements} />
+            </Flex>
+        );
+    };
+
+    const HomeApproach_cards = (props) => {
+        console.log("props.content?.approach_cards.component?.elements: ", props.content?.approach_cards.component?.elements)
+        return (
+            <Flex
+                justify={Flex.justify.CENTER} 
+                align={Flex.justify.CENTER} 
+                className={'ni-layout-home-approach'} 
+                direction={Flex.directions.COLUMN}
+                gap={Flex.gaps.SMALL} >
+                <HomeBlock detail={props.content?.approach_cards.component?.elements} />
+            </Flex>
+        );
+    };
+
     return (
         //(props.home === undefined) ? 
             //<Messenger message={'loader'} /> :
@@ -52,7 +80,8 @@ export const Home = (props) => {
                 gap={Flex.gaps.NONE} >
                 <HeaderMenu content={props.header} />
                 <HomeIntro content={props.home} />
-                {/*<FixedMenu content={props.footer} /> */}
+                <HomeApproach_title content={props.home} />
+                <HomeApproach_cards content={props.home} />
             </Flex>
     );
 }

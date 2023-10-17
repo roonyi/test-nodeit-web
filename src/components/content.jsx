@@ -51,6 +51,8 @@ export const WebContent = (props) => {
                         return (<p key={element.key} className={`ni-layout${alterClass}-title${styleClass}`}>{element.content}</p>);
                     case 'Subtitle':
                         return (<p key={element.key} className={`ni-layout${alterClass}-subtitle${styleClass}`}>{element.content}</p>);
+                    case 'Card':
+                        return (<p key={element.key} className={`ni-layout${alterClass}-subtitle${styleClass}`}>{element.content}</p>);
                     case 'Bullet':
                         return (<TextWithHighlight
                             key={element.key} 
