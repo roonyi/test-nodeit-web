@@ -1,6 +1,5 @@
 import { Flex, Box, Button } from 'monday-ui-react-core';
 //import { Link as RouteLink } from "react-router-dom";
-//import { useTranslation } from 'react-i18next';
 import { HeaderMenu } from "./header"; 
 //import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
@@ -34,7 +33,7 @@ export const Home = (props) => {
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.intro_left.component?.elements} />
+                <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'-text'}/>
                 <HomeBlock detail={props.content?.intro_right.component?.elements} />
             </Flex>
         );

@@ -1,13 +1,13 @@
 /* Main measutements and pallette */
 :root {
   --number-main-max-width: 1280px;
-  --number-menu-image-height: 5rem;
-  --number-menu-padding: 20px;
-  --number-block-padding: 8px;
-  --number-home-padding: 48px;
-  --number-layout-title: 50px;
-  --number-layout-subtitle: 25px;
-  --number-layout-content-padding: 20%;
+  --number-menu-image-height: 6rem;
+  --number-menu-padding: 15px;
+  --number-block-padding: 30px;
+  --number-home-padding: 50px;
+  --number-layout-title: 40px;
+  --number-layout-subtitle: 20px;
+  --number-layout-content-padding: 30%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
   --number-product-logo-height: 2rem;
@@ -218,10 +218,17 @@
   width: 100%;
   font-size: var(--number-layout-title);
   font-weight: bolder; 
-  background-position-x: -110%, 210%, -45%, 240%;
+  padding-left: 50px;
+  padding-right: 50px;
+/*   background-position-x: -110%, 210%, -45%, 240%;
   background-position-y: -120%, 320%, top, bottom;
-  background-size: 60%, 60%, 50%, 75%;
-  background-repeat: no-repeat;
+  background-size: 60%, 60%, 50%, 75%; 
+  background-repeat: no-repeat;*/
+}
+
+:root .ni-layout-title-text {
+  height: 100%;
+  width: 60%;
 }
 
 :root .ni-layout-home-approach {
