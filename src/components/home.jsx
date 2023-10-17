@@ -8,7 +8,7 @@ export const Home = (props) => {
     console.log("props.header", props.header)
     const HomeBlock = (props) => {
         return (
-            <Box className={'ni-layout-home-block'} >
+            <Box className={'ni-layout-home-block'} contentClassName={'ni-layout-title-text'} >
                 <WebContent info={props.detail} />
             </Box>
         );
@@ -33,7 +33,7 @@ export const Home = (props) => {
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'-text'}/>
+                <HomeBlock detail={props.content?.intro_left.component?.elements} />
                 <HomeBlock detail={props.content?.intro_right.component?.elements} />
             </Flex>
         );
