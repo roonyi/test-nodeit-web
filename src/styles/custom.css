@@ -23,11 +23,11 @@
   --color-theme-main-background: var(--primary-background-color);
   --color-theme-basic-color1: #8511EC;
   --color-theme-basic-color2: #AFFFD3;
-  --color-theme-basic-color3: #42d7e2;
+  --color-theme-basic-color3: #F6F5FA;
   --color-theme-basic-color4: #919191;
   --color-theme-alter-color1: #8511EC;
   --color-theme-alter-color2: #AFFFD3;
-  --color-theme-alter-color3: #fbb844;
+  --color-theme-alter-color3: #2E2E2E;
   --color-theme-alter-color4: #313131;
   --color-theme-modif-shade1: #fff9;
   --color-theme-modif-shade2: #5ff3a0ff;
@@ -177,6 +177,7 @@
 
 :root .ni-layout-home-intro,
 :root .ni-layout-home-approach,
+:root .ni-layout-home-products,
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
 :root .ni-layout-faq-list {
@@ -221,15 +222,18 @@
   font-weight: bolder; 
   padding-left: 0px;
   padding-right: 50px;
-/*   background-position-x: -110%, 210%, -45%, 240%;
-  background-position-y: -120%, 320%, top, bottom;
-  background-size: 60%, 60%, 50%, 75%; 
-  background-repeat: no-repeat;*/
 }
 
-:root .ni-layout-title-text {
+:root .ni-layout-home-intro-title-text {
   height: 100%;
   width: 60%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+:root .ni-layout-home-approach-title-text {
+  height: 100%;
+  width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -239,12 +243,26 @@
   width: 100%;
   font-size: var(--number-layout-title);
   font-weight: bolder; 
-/*   background-position-x: -110%, 210%, -45%, 240%;
-  background-position-y: -120%, 320%, top, bottom;
-  background-size: 60%, 60%, 50%, 75%; */
   background-repeat: no-repeat;
   background-color: var(--color-theme-basic-color2);
   color: var(--color-theme-basic-color1)
+}
+
+:root .ni-layout-home-products {
+  height: 100%;
+  width: 100%;
+  font-size: var(--number-layout-subtitle);
+  /* font-weight: bolder; 
+  background-repeat: no-repeat; */
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3)
+}
+
+:root .ni-layout-home-products-title {
+  height: 100%;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 :root .ni-home-button {

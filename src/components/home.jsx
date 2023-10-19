@@ -33,7 +33,7 @@ export const Home = (props) => {
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-title-text'}/>
+                <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
                 <HomeBlock detail={props.content?.intro_right.component?.elements} />
             </Flex>
         );
@@ -48,7 +48,7 @@ export const Home = (props) => {
                 className={'ni-layout-home-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.approach_title.component?.elements} />
+                <HomeBlock detail={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
             </Flex>
         );
     };
@@ -67,6 +67,34 @@ export const Home = (props) => {
         );
     };
 
+    const HomeProducts_title = (props) => {
+        console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
+        return (
+            <Flex
+                justify={Flex.justify.CENTER} 
+                align={Flex.justify.CENTER} 
+                className={'ni-layout-home-products'} 
+                direction={Flex.directions.COLUMN}
+                gap={Flex.gaps.SMALL} >
+                <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
+            </Flex>
+        );
+    };
+
+    const HomeProducts = (props) => {
+        console.log("props.content?.products.component?.elements: ", props.content?.products.component?.elements)
+        return (
+            <Flex
+                justify={Flex.justify.CENTER} 
+                align={Flex.justify.CENTER} 
+                className={'ni-layout-home-products'} 
+                direction={Flex.directions.COLUMN}
+                gap={Flex.gaps.SMALL} >
+                <HomeBlock detail={props.content?.products.component?.elements} />
+            </Flex>
+        );
+    };
+
     return (
         //(props.home === undefined) ? 
             //<Messenger message={'loader'} /> :
@@ -81,6 +109,9 @@ export const Home = (props) => {
                 <HomeIntro content={props.home} />
                 <HomeApproach_title content={props.home} />
                 <HomeApproach_cards content={props.home} />
+                <HomeProducts_title content={props.home} />
+                <HomeProducts content={props.home} />
+
             </Flex>
     );
 }
