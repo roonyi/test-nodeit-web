@@ -1,6 +1,7 @@
 import { Flex, Box, Button } from 'monday-ui-react-core';
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
+import { FooterMenu } from "./footer"; 
 //import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
 
@@ -111,6 +112,7 @@ export const Home = (props) => {
                 <HomeApproach_cards content={props.home} />
                 <HomeProducts_title content={props.home} />
                 <HomeProducts content={props.home} />
+                <FooterMenu content={props.footer} />
 
             </Flex>
     );

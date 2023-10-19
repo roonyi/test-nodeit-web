@@ -3,6 +3,7 @@
   --number-main-max-width: 1280px;
   --number-menu-image-height: 6rem;
   --number-menu-padding: 15px;
+  --number-block-padding-footer: 10px;
   --number-block-padding: 30px;
   --number-home-padding: 50px;
   --number-layout-title: 40px;
@@ -24,7 +25,7 @@
   --color-theme-basic-color1: #8511EC;
   --color-theme-basic-color2: #AFFFD3;
   --color-theme-basic-color3: #F6F5FA;
-  --color-theme-basic-color4: #919191;
+  --color-theme-basic-color4: #22142b;
   --color-theme-alter-color1: #8511EC;
   --color-theme-alter-color2: #AFFFD3;
   --color-theme-alter-color3: #2E2E2E;
@@ -75,6 +76,14 @@
   width: 100%;
 }
 
+:root .ni-layout-bar-footer {
+  background-color: var(--color-theme-alter-color4);
+  padding: var(--number-block-padding-footer);
+  color: var(--color-theme-main-foreground);
+  width: 100%;
+  align-items: center !important;
+}
+
 :root .ni-layout-bar-link {
   color: var(--color-theme-main-background);
   padding: var(--number-block-padding);
@@ -92,6 +101,10 @@
 
 :root .ni-layout-block-header {
   text-align: left;
+}
+
+:root .ni-layout-block-footer {
+  text-align: center;
 }
 
 :root .ni-layout-title {
@@ -156,6 +169,13 @@
 
 :root .ni-layout-home-block-left {
   text-align: left;
+}
+
+:root .ni-layout-text-footer {
+  /* height: 100vh; */
+  color: var(--color-theme-main-background);
+  padding: var(--number-block-padding-footer);
+  width: 100%;
 }
 
 /* Common style attributes */
