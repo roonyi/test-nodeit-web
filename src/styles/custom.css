@@ -2,9 +2,10 @@
 :root {
   --number-main-max-width: 1280px;
   --number-menu-image-height: 6rem;
+  --number-footer-image-height: 3rem;
   --number-menu-padding: 15px;
   --number-block-padding-footer: 10px;
-  --number-block-padding: 30px;
+  --number-block-padding: 20px;
   --number-home-padding: 50px;
   --number-layout-title: 40px;
   --number-layout-subtitle: 20px;
@@ -78,10 +79,19 @@
 
 :root .ni-layout-bar-footer {
   background-color: var(--color-theme-alter-color4);
+  margin-top: 0px;
   padding: var(--number-block-padding-footer);
   color: var(--color-theme-main-foreground);
   width: 100%;
-  align-items: center !important;
+  /* align-items: center !important; */
+}
+
+:root .ni-layout-bar-footer-sn {
+  background-color: var(--color-theme-alter-color4);
+  margin-top: 0px;
+  padding: var(--number-block-padding-footer);
+  color: var(--color-theme-main-foreground);
+  width:40%;
 }
 
 :root .ni-layout-bar-link {
@@ -98,6 +108,19 @@
   height: var(--number-menu-image-height);
   object-fit: cover;
 }
+
+:root .ni-layout-bar-footer-image {
+  height: var(--number-footer-image-height);
+  padding: var(--number-block-padding-footer);
+  /* object-fit: cover; */
+}
+
+/* :root .ni-layout-bar-footer-text {
+  height: var(--number-footer-image-height);
+  padding: var(--number-block-padding-footer);
+  border-bottom: auto !important;
+  object-fit: cover;
+} */
 
 :root .ni-layout-block-header {
   text-align: left;
