@@ -1,4 +1,4 @@
-import { Flex, Box, Button } from 'monday-ui-react-core';
+import { Flex, Box, Accordion, AccordionItem } from 'monday-ui-react-core';
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
 import { FooterMenu } from "./footer"; 
@@ -15,41 +15,37 @@ export const Faq = (props) => {
         );
     }
 
-    const AboutusIntro = (props) => {
-        console.log("props.content?.who_we_are_left.component?.elements: ", props.content?.who_we_are_left.component?.elements)
+    const FaqIntro = (props) => {
+        console.log("props.content?.faq_title.component?.elements: ", props.content?.title.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.CENTER} 
+                justify={Flex.justify.START} 
+                align={Flex.justify.START} 
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} 
                 >
-                <AboutusBlock detail={props.content?.who_we_are_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>                
-                <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.START} 
-                className={'ni-layout-who-we-are-intro'} 
-                direction={Flex.directions.COLUMN}
-                gap={Flex.gaps.SMALL} 
-                >
-                <AboutusBlock detail={props.content?.who_we_are_right.component?.elements} contentClassName={'ni-layout-home-intro-text'} />
-                </Flex>
+                <FaqBlock detail={props.content?.title.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>                
             </Flex>
             
         );
     };
 
-    const AboutusApproach_title = (props) => {
-        console.log("props.content?.approach_title.component?.elements: ", props.content?.approach_title.component?.elements)
+    const Faq = (props) => {
+        console.log("props.content?.questions.component?.elements: ", props.content?.questions.component?.elements)
         return (
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home-approach'} 
+                className={'ni-layout-faq'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <AboutusBlock detail={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
+                {/* <FaqBlock detail={props.content?.questions.component?.elements} /> */}
+                <Accordion>
+                    <AccordionItem title="Notifications">
+                    <div className="monday-storybook-accordion_small-box" />
+                    </AccordionItem>
+                </Accordion>
             </Flex>
         );
     };
@@ -107,11 +103,8 @@ export const Faq = (props) => {
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
                 <HeaderMenu content={props.header} />
-                {/* <AboutusIntro content={props.aboutus} />
-                <AboutusApproach_title content={props.aboutus} />
-                <AboutusApproach_cards content={props.aboutus} />
-                <AboutusTeam_title content={props.aboutus} />
-                <AboutusTeam content={props.aboutus} /> */}
+                <FaqIntro content={props.faq} />
+                <Faq content={props.faq} />
                 <FooterMenu content={props.footer} />
 
             </Flex>

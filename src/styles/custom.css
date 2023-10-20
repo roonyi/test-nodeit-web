@@ -268,6 +268,18 @@
   padding-right: 100px; 
 }
 
+:root .ni-layout-faq {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: var(--number-layout-title);
+  font-weight: bolder; 
+  padding-left: 0px;
+  padding-right: 100px; 
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3);
+}
+
 :root .ni-layout-who-we-are-intro {
   width: 200%;
   font-weight: bolder; 
