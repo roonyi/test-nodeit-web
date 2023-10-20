@@ -9,6 +9,7 @@
   --number-home-padding: 50px;
   --number-layout-title: 40px;
   --number-layout-subtitle: 20px;
+  --number-layout-text: 15px;
   --number-layout-content-padding: 30%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
@@ -158,9 +159,9 @@
 :root .ni-layout-text {
   color: var(--color-theme-main-background);
   margin: 0px;
-  white-space: pre-line;
+  /* white-space: pre-line; */
   text-align: left;
-  font-size: large;
+  /* font-size: large; */
 }
 
 :root .ni-layout-main,
@@ -264,7 +265,18 @@
   font-size: var(--number-layout-title);
   font-weight: bolder; 
   padding-left: 0px;
-  padding-right: 50px;
+  padding-right: 100px; 
+}
+
+:root .ni-layout-who-we-are-intro {
+  width: 200%;
+  font-weight: bolder; 
+  margin-bottom: 5%;
+}
+
+:root .ni-layout-home-intro-text {
+  font-size: var(--number-layout-text) !important;
+  display: inline-flex;
 }
 
 :root .ni-layout-home-intro-title-text {
