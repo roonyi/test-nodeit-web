@@ -40,12 +40,8 @@ export const Faq = (props) => {
                 className={'ni-layout-faq'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                {/* <FaqBlock detail={props.content?.questions.component?.elements} /> */}
-                <Accordion>
-                    <AccordionItem title="Notifications">
-                    <div className="monday-storybook-accordion_small-box" />
-                    </AccordionItem>
-                </Accordion>
+                <FaqBlock detail={props.content?.questions.component?.elements} />
+
             </Flex>
         );
     };

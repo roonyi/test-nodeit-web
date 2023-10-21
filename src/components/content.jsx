@@ -1,4 +1,4 @@
-import { Flex, TextWithHighlight, Button } from 'monday-ui-react-core';
+import { Flex, TextWithHighlight, Button, Accordion, AccordionItem  } from 'monday-ui-react-core';
 import { Link as RouteLink } from "react-router-dom";
 
 export const WebGroup = (props) => {
@@ -68,6 +68,15 @@ export const WebContent = (props) => {
                         );
                     case 'Asset':
                         return (<WebAsset key={element.key} element={element} styleClass={styleClass} alterClass={alterClass} />);
+                    case 'Accordion':
+                        let ques_ans = element.content.split("##")
+                        return (
+                            <Accordion key={element.key} className={`ni-layout${alterClass}-text${styleClass}`}>
+                                    <AccordionItem title={ques_ans[0]}>
+                                        <span>{ques_ans[1]}</span>
+                                    </AccordionItem>
+                            </Accordion>
+                            );
                     case 'Logo':
                         return (<img key={element.key} src={element.file[0]} className={`ni-layout${alterClass}-logo${styleClass}`} />);
                     case 'Button':
