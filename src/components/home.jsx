@@ -44,8 +44,8 @@ export const Home = (props) => {
         console.log("props.content?.approach_title.component?.elements: ", props.content?.approach_title.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.CENTER} 
+                justify={Flex.justify.STAR} 
+                align={Flex.justify.START} 
                 className={'ni-layout-home-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >

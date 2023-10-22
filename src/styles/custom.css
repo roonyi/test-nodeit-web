@@ -10,7 +10,7 @@
   --number-layout-title: 40px;
   --number-layout-subtitle: 20px;
   --number-layout-text: 15px;
-  --number-layout-content-padding: 30%;
+  --number-layout-content-padding: 20%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
   --number-product-logo-height: 2rem;
@@ -310,7 +310,7 @@
   width: 100%;
   font-size: var(--number-layout-title);
   font-weight: bolder; 
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color2);
   color: var(--color-theme-basic-color1)
 }
