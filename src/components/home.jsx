@@ -74,7 +74,7 @@ export const Home = (props) => {
         console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.CENTER} 
+                justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-products'} 
                 direction={Flex.directions.ROW}

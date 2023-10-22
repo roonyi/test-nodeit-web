@@ -84,7 +84,8 @@ export const WebContent = (props) => {
                                   align={Flex.justify.CENTER} 
                                   direction={Flex.directions.ROW}
                             >
-                                <div className='card' >
+                                <div className='card' style={{height: '350px', width:'250px'}}>
+                                    <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
                                         <h5 className='card-title'>{element.content}</h5>
                                     </div>

@@ -112,6 +112,13 @@
   width: 100%
 }
 
+:root .ni-layout-card-image {
+  color: var(--color-theme-main-background);
+  padding: var(--number-card-padding);
+  width: 250px;
+  height: 350px;
+}
+
 :root .ni-layout-bar-image {
   height: var(--number-menu-image-height);
   object-fit: cover;
@@ -311,11 +318,13 @@
   padding: 3%;
   margin-left: auto !important;
   margin-right: auto !important;
+  /* margin-bottom: 0%; */
 }
 
 :root .ni-layout-home-approach {
   height: 100%;
   width: 100%;
+  /* padding: 3%; */
   font-size: var(--number-layout-title);
   font-weight: bolder; 
   /* background-repeat: no-repeat; */
@@ -326,7 +335,7 @@
 :root .ni-layout-card-approach {
   height: 100%;
   width: 100%;
-  padding: 3%;
+  padding: 1%;
   padding-left: 10%;
   padding-right: 10%;
   font-size: var(--number-layout-title);
