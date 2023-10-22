@@ -6,6 +6,7 @@
   --number-menu-padding: 15px;
   --number-block-padding-footer: 10px;
   --number-block-padding: 20px;
+  --number-card-padding: 20px;
   --number-home-padding: 50px;
   --number-layout-title: 40px;
   --number-layout-subtitle: 20px;
@@ -105,6 +106,12 @@
   padding: var(--number-block-padding);
 }
 
+:root .ni-layout-card-text {
+  color: var(--color-theme-main-background);
+  padding: var(--number-card-padding);
+  width: 100%
+}
+
 :root .ni-layout-bar-image {
   height: var(--number-menu-image-height);
   object-fit: cover;
@@ -149,7 +156,7 @@
 }
 
 :root .ni-layout-image {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 :root .ni-layout-image:hover {
@@ -312,7 +319,33 @@
   font-weight: bolder; 
   /* background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color2);
-  color: var(--color-theme-basic-color1)
+  color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-card-approach {
+  height: 100%;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: var(--number-layout-title);
+  /* font-weight: bolder;  */
+  /* background-repeat: no-repeat; */
+  background-color: var(--color-theme-basic-color2);
+  color: var(--color-theme-basic-color1);
+  
+}
+
+:root .ni-layout-card-products {
+  height: 100%;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: var(--number-layout-title);
+  /* font-weight: bolder;  */
+  /* background-repeat: no-repeat; */
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-basic-color1);
+  
 }
 
 :root .ni-layout-home-products {

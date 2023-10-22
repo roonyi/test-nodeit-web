@@ -10,7 +10,7 @@ export const Aboutus = (props) => {
     const AboutusBlock = (props) => {
         return (
             <Box className={'ni-layout-home-block'}  >
-                <WebContent info={props.detail}  contentClassName={props.contentClassName}/>
+                <WebContent info={props.detail}  contentClassName={props.contentClassName} alterClassHint={props.alterClassHint}/>
             </Box>
         );
     }
@@ -60,10 +60,10 @@ export const Aboutus = (props) => {
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home-approach'} 
+                className={'ni-layout-card-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <AboutusBlock detail={props.content?.approach_cards.component?.elements} />
+                <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
             </Flex>
         );
     };
@@ -88,10 +88,10 @@ export const Aboutus = (props) => {
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home-products'} 
-                direction={Flex.directions.COLUMN}
+                className={'ni-layout-card-products'} 
+                direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <AboutusBlock detail={props.content?.team.component?.elements} />
+                <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/>
             </Flex>
         );
     };

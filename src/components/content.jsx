@@ -51,8 +51,6 @@ export const WebContent = (props) => {
                         return (<p key={element.key} className={`ni-layout${alterClass}-title${styleClass}`}>{element.content}</p>);
                     case 'Subtitle':
                         return (<p key={element.key} className={`ni-layout${alterClass}-subtitle${styleClass}`}>{element.content}</p>);
-                    case 'Card':
-                        return (<p key={element.key} className={`ni-layout${alterClass}-subtitle${styleClass}`}>{element.content}</p>);
                     case 'Bullet':
                         return (<TextWithHighlight
                             key={element.key} 
@@ -79,6 +77,20 @@ export const WebContent = (props) => {
                             );
                     case 'Logo':
                         return (<img key={element.key} src={element.file[0]} className={`ni-layout${alterClass}-logo${styleClass}`} />);
+                    case 'Card':
+                        return (
+                            <Flex className={`ni-layout${alterClass}-text${styleClass}`}
+                                  justify={Flex.justify.CENTER} 
+                                  align={Flex.justify.CENTER} 
+                                  direction={Flex.directions.ROW}
+                            >
+                                <div className='card' >
+                                    <div className='card-body'>
+                                        <h5 className='card-title'>{element.content}</h5>
+                                    </div>
+                                </div>
+                            </Flex>
+                        );
                     case 'Button':
                         return (
                             <RouteLink key={element.key} to={element.link} >

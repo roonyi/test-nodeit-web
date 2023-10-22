@@ -10,7 +10,7 @@ export const Home = (props) => {
     const HomeBlock = (props) => {
         return (
             <Box className={'ni-layout-home-block'}  >
-                <WebContent info={props.detail}  contentClassName={props.contentClassName}/>
+                <WebContent info={props.detail}  contentClassName={props.contentClassName} alterClassHint={props.alterClassHint}/>
             </Box>
         );
     }
@@ -44,8 +44,8 @@ export const Home = (props) => {
         console.log("props.content?.approach_title.component?.elements: ", props.content?.approach_title.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.STAR} 
-                align={Flex.justify.START} 
+                justify={Flex.justify.CENTER} 
+                align={Flex.justify.CENTER} 
                 className={'ni-layout-home-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
@@ -58,12 +58,14 @@ export const Home = (props) => {
         console.log("props.content?.approach_cards.component?.elements: ", props.content?.approach_cards.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.CENTER} 
+                justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home-approach'} 
+                // className={'ni-layout-home-approach'} 
+                className={'ni-layout-card-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.approach_cards.component?.elements} />
+                <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
+                {/* <HomeBlock detail={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>     */}
             </Flex>
         );
     };
@@ -88,10 +90,10 @@ export const Home = (props) => {
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home-products'} 
+                className={'ni-layout-card-products'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.products.component?.elements} />
+                <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/>
             </Flex>
         );
     };
