@@ -70,33 +70,34 @@ export const Home = (props) => {
         );
     };
 
-    const HomeProducts_title = (props) => {
+    const HomeProducts = (props) => {
         console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
         return (
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-products'} 
-                direction={Flex.directions.COLUMN}
-                gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
-            </Flex>
-        );
-    };
-
-    const HomeProducts = (props) => {
-        console.log("props.content?.products.component?.elements: ", props.content?.products.component?.elements)
-        return (
-            <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.CENTER} 
-                className={'ni-layout-card-products'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
+                <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
                 <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/>
             </Flex>
         );
     };
+
+    // const HomeProducts = (props) => {
+    //     console.log("props.content?.products.component?.elements: ", props.content?.products.component?.elements)
+    //     return (
+    //         <Flex
+    //             justify={Flex.justify.CENTER} 
+    //             align={Flex.justify.CENTER} 
+    //             className={'ni-layout-card-products'} 
+    //             direction={Flex.directions.ROW}
+    //             gap={Flex.gaps.SMALL} >
+    //             {/* <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/> */}
+    //         </Flex>
+    //     );
+    // };
 
     return (
         //(props.home === undefined) ? 
@@ -112,7 +113,7 @@ export const Home = (props) => {
                 <HomeIntro content={props.home} />
                 <HomeApproach_title content={props.home} />
                 <HomeApproach_cards content={props.home} />
-                <HomeProducts_title content={props.home} />
+                {/* <HomeProducts_title content={props.home} /> */}
                 <HomeProducts content={props.home} />
                 <FooterMenu content={props.footer} />
 

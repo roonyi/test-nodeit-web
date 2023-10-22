@@ -68,7 +68,7 @@ export const Aboutus = (props) => {
         );
     };
 
-    const AboutusTeam_title = (props) => {
+    const AboutusTeam = (props) => {
         console.log("props.content?.team_title.component?.elements: ", props.content?.team_title.component?.elements)
         return (
             <Flex
@@ -78,23 +78,24 @@ export const Aboutus = (props) => {
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
                 <AboutusBlock detail={props.content?.team_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
-            </Flex>
-        );
-    };
-
-    const AboutusTeam = (props) => {
-        console.log("props.content?.team.component?.elements: ", props.content?.team.component?.elements)
-        return (
-            <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.CENTER} 
-                className={'ni-layout-card-products'} 
-                direction={Flex.directions.ROW}
-                gap={Flex.gaps.SMALL} >
                 <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/>
             </Flex>
         );
     };
+
+    // const AboutusTeam = (props) => {
+    //     console.log("props.content?.team.component?.elements: ", props.content?.team.component?.elements)
+    //     return (
+    //         <Flex
+    //             justify={Flex.justify.CENTER} 
+    //             align={Flex.justify.CENTER} 
+    //             className={'ni-layout-card-products'} 
+    //             direction={Flex.directions.ROW}
+    //             gap={Flex.gaps.SMALL} >
+    //             {/* <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/> */}
+    //         </Flex>
+    //     );
+    // };
 
     return (
         //(props.home === undefined) ? 
@@ -110,7 +111,7 @@ export const Aboutus = (props) => {
                 <AboutusIntro content={props.aboutus} />
                 <AboutusApproach_title content={props.aboutus} />
                 <AboutusApproach_cards content={props.aboutus} />
-                <AboutusTeam_title content={props.aboutus} />
+                {/* <AboutusTeam_title content={props.aboutus} /> */}
                 <AboutusTeam content={props.aboutus} />
                 <FooterMenu content={props.footer} />
 

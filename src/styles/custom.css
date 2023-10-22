@@ -308,6 +308,7 @@
 :root .ni-layout-home-approach-title-text {
   height: 100%;
   width: 100%;
+  padding: 3%;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -325,6 +326,7 @@
 :root .ni-layout-card-approach {
   height: 100%;
   width: 100%;
+  padding: 3%;
   padding-left: 10%;
   padding-right: 10%;
   font-size: var(--number-layout-title);
@@ -351,6 +353,7 @@
 :root .ni-layout-home-products {
   height: 100%;
   width: 100%;
+  padding: 5%;
   font-size: var(--number-layout-subtitle);
   /* font-weight: bolder; 
   background-repeat: no-repeat; */
@@ -359,8 +362,6 @@
 }
 
 :root .ni-layout-home-products-title {
-  height: 100%;
-  width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
 }
