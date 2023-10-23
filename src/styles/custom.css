@@ -10,6 +10,8 @@
   --number-home-padding: 50px;
   --number-layout-title: 40px;
   --number-layout-subtitle: 20px;
+  --number-layout-faq-question: 20px;
+  --number-layout-faq-answer: 15px;
   --number-layout-text: 15px;
   --number-layout-content-padding: 20%;
   --number-layout-modal-title: 75px;
@@ -229,7 +231,7 @@
 :root .ni-layout-home-block,
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
-:root .ni-layout-faq-list {
+:root .ni-layout-faq {
   width: 100%;
 }
 
@@ -238,7 +240,7 @@
 :root .ni-layout-home-products,
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
-:root .ni-layout-faq-list {
+:root .ni-layout-faq {
   margin: 0px;
   font-family: Comfortaa;
 }
@@ -256,7 +258,7 @@
 
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
-:root .ni-layout-faq-list {
+:root .ni-layout-faq {
   color: var(--color-theme-main-foreground);
   background-color: var(--color-theme-main-background);
 }
@@ -285,9 +287,31 @@
 :root .ni-layout-faq {
   height: 100%;
   width: 100%;
-  text-align: center;
-  font-size: var(--number-layout-title);
+  /* text-align: center; */
+  /* font-size: var(--number-layout-title); */
+  font-weight: bolder;
+  padding: 5%; 
+  padding-left: 100px;
+  padding-right: 100px; 
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3);
+}
+
+:root .ni-layout-faq-question {
+  height: 100%;
+  width: 100%;
+  font-size: var(--number-layout-faq-question);
   font-weight: bolder; 
+  padding-left: 0px;
+  padding-right: 100px; 
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3);
+}
+
+:root .ni-layout-faq-answer {
+  height: 100%;
+  width: 100%;
+  font-size: var(--number-layout-faq-answer);
   padding-left: 0px;
   padding-right: 100px; 
   background-color: var(--color-theme-basic-color3);

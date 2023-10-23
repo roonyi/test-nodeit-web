@@ -69,9 +69,9 @@ export const WebContent = (props) => {
                     case 'Accordion':
                         let ques_ans = element.content.split("##")
                         return (
-                            <Accordion key={element.key} className={`ni-layout${alterClass}-text${styleClass}`}>
-                                    <AccordionItem title={ques_ans[0]}>
-                                        <span>{ques_ans[1]}</span>
+                            <Accordion key={element.key} >
+                                    <AccordionItem title={ques_ans[0]} className={`ni-layout${alterClass}-question${styleClass}`}>
+                                        <span className={`ni-layout${alterClass}-answer${styleClass}`}>{ques_ans[1]}</span>
                                     </AccordionItem>
                             </Accordion>
                             );
