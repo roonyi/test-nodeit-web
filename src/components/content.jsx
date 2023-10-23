@@ -78,6 +78,7 @@ export const WebContent = (props) => {
                     case 'Logo':
                         return (<img key={element.key} src={element.file[0]} className={`ni-layout${alterClass}-logo${styleClass}`} />);
                     case 'Card':
+                        let card_cont = element.content.split("##")
                         return (
                             <Flex className={`ni-layout${alterClass}-text${styleClass}`}
                                   justify={Flex.justify.CENTER} 
@@ -87,7 +88,8 @@ export const WebContent = (props) => {
                                 <div className='card' style={{height: '350px', width:'250px'}}>
                                     <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
-                                        <h5 className='card-title'>{element.content}</h5>
+                                        <h5 className='card-title'>{card_cont[0]}</h5>
+                                        <h6 className='card-text'>{card_cont[1]}</h6>
                                     </div>
                                 </div>
                             </Flex>
