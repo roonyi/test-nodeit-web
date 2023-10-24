@@ -126,6 +126,11 @@
   /* object-fit: cover; */
 }
 
+:root .ni-layout-bar-footer-logo {
+  padding-left: 15%;
+  padding-right: 8%;
+}
+
 :root .ni-layout-bar-footer-image {
   height: var(--number-footer-image-height);
   padding: var(--number-block-padding-footer);
