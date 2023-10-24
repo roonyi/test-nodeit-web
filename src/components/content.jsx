@@ -25,6 +25,7 @@ export const WebContent = (props) => {
     const styleClass = (props.contentClassName === undefined) ? '' : ` ${props.contentClassName}`;
     const alterClass = (props.alterClassHint === undefined) ? '' : `-${props.alterClassHint}`;
     console.log("props.info in weblist content: ", props.info)
+    console.log("props.target: ", props.target)
     const WebAsset = (props) => {
         console.log("props.element in content: ", props.element)
         if (props.element.link === '') {
@@ -32,11 +33,19 @@ export const WebContent = (props) => {
                 <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
             )
         } else {
-            return (
-                <RouteLink to={props.element.link}>
-                    <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
-                </RouteLink>
-            )
+            if (props.element.render === 'Asset') {
+                return (
+                    <RouteLink to={props.element.link} >
+                        <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
+                    </RouteLink>
+                )
+            } else { //if is Asset_newpage
+                return (
+                    <RouteLink to={props.element.link} target={'_blank'}>
+                        <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
+                    </RouteLink>
+                )
+            }
         }
     }
 
@@ -64,8 +73,16 @@ export const WebContent = (props) => {
                                 {element.name}
                             </RouteLink>
                         );
+                    case 'Link_newpage':
+                        return (
+                            <RouteLink key={element.key} to={element.link} state={{entry: element}} className={`ni-layout${alterClass}-link${styleClass}`} target={'_blank'}>
+                                {element.name}
+                            </RouteLink>
+                        );    
                     case 'Asset':
                         return (<WebAsset key={element.key} element={element} styleClass={styleClass} alterClass={alterClass} />);
+                    case 'Asset_newpage':
+                        return (<WebAsset key={element.key} element={element} styleClass={styleClass} alterClass={alterClass} target={'_blank'}/>);
                     case 'Accordion':
                         let ques_ans = element.content.split("##")
                         return (
@@ -84,8 +101,9 @@ export const WebContent = (props) => {
                                   justify={Flex.justify.CENTER} 
                                   align={Flex.justify.CENTER} 
                                   direction={Flex.directions.ROW}
+                                  gap={Flex.gaps.SMALL}
                             >
-                                <div className='card' style={{height: '350px', width:'250px'}}>
+                                <div className='card' style={{height: '300px', width:'200px'}}>
                                     <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
                                         <h5 className='card-title'>{card_cont[0]}</h5>

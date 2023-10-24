@@ -20,13 +20,13 @@ export const FooterMenu = (props) => {
                     >
                     <Flex
                         justify={Flex.justify.CENTER} 
-                        align={Flex.justify.CENTER} 
+                        align={Flex.justify.START} 
                         className={'ni-layout-bar-footer'} 
                         direction={Flex.directions.ROW} 
                         gap={Flex.gaps.SMALL} 
                         >
                         <Flex direction={Flex.directions.COLUMN}
-                              justify={Flex.justify.CENTER} 
+                              justify={Flex.justify.START}
                               >
                             <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} />
                         </Flex>
