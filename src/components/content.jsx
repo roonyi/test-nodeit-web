@@ -94,6 +94,26 @@ export const WebContent = (props) => {
                             );
                     case 'Logo':
                         return (<img key={element.key} src={element.file[0]} className={`ni-layout${alterClass}-logo${styleClass}`} />);
+                    case 'Card_btn':
+                        let card_cont_btn = element.content.split("##")
+                        return (
+                            <Flex className={`ni-layout${alterClass}-text${styleClass}`}
+                                    justify={Flex.justify.CENTER} 
+                                    align={Flex.justify.CENTER} 
+                                    direction={Flex.directions.ROW}
+                                    gap={Flex.gaps.SMALL}
+                            >
+                                <div className='card' style={{height: '300px', width:'200px'}}>
+                                    <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
+                                    <div className='card-body'>
+                                        <RouteLink key={element.key} to={element.link} >
+                                            <h5 href="#" className='btn btn-primary'>{card_cont_btn[0]}</h5>
+                                        </RouteLink>    
+                                        <h6 className='card-text'>{card_cont_btn[1]}</h6>
+                                    </div>
+                                </div>
+                            </Flex>
+                        );
                     case 'Card':
                         let card_cont = element.content.split("##")
                         return (
