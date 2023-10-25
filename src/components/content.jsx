@@ -107,7 +107,7 @@ export const WebContent = (props) => {
                                     <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
                                         <RouteLink key={element.key} to={element.link} >
-                                            <h5 href="#" className='btn btn-primary'>{card_cont_btn[0]}</h5>
+                                            <h5 href="#" className='btn btn-primary-card '>{card_cont_btn[0]}</h5>
                                         </RouteLink>    
                                         <h6 className='card-text'>{card_cont_btn[1]}</h6>
                                     </div>

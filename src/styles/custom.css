@@ -121,6 +121,17 @@
   height: 240px;
 }
 
+:root .btn-primary-card {
+  color: var(--color-theme-basic-color4);
+  background-color: var(--color-theme-basic-color2);
+  border: none;
+}
+
+:root .btn-primary-card:hover {
+  background-color: var(--color-theme-basic-color1);
+  color:var(--color-theme-basic-color3);
+}
+
 :root .ni-layout-bar-image {
   height: var(--number-menu-image-height);
   /* object-fit: cover; */
