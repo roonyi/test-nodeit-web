@@ -303,9 +303,8 @@
 :root .ni-layout-faq {
   height: 100%;
   width: 100%;
-  /* text-align: center; */
   /* font-size: var(--number-layout-title); */
-  font-weight: bolder;
+  /* font-weight: bold; */
   padding: 5%; 
   padding-left: 100px;
   padding-right: 100px; 
@@ -317,9 +316,10 @@
   height: 100%;
   width: 100%;
   font-size: var(--number-layout-faq-question);
-  font-weight: bolder; 
+  font-weight:bolder; 
+  text-align: left;
   padding-left: 0px;
-  padding-right: 100px; 
+  padding-right: 0px; 
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3);
 }
@@ -328,8 +328,9 @@
   height: 100%;
   width: 100%;
   font-size: var(--number-layout-faq-answer);
-  padding-left: 0px;
-  padding-right: 100px; 
+  padding-left: 15px;
+  padding-right: 0px;
+  text-align: left; 
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3);
 }

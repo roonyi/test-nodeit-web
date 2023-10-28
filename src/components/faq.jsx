@@ -23,9 +23,11 @@ export const Faq = (props) => {
                 align={Flex.justify.START} 
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
-                gap={Flex.gaps.SMALL} 
+                gap={Flex.gaps.SMALL}   
                 >
-                <FaqBlock detail={props.content?.title.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>                
+                <FaqBlock detail={props.content?.title.component?.elements} 
+                contentClassName={'ni-layout-home-intro-title-text'}
+                />                
             </Flex>
             
         );

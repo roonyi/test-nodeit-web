@@ -3,7 +3,7 @@ import { WebContent } from './content';
 
 export const FooterMenu = (props) => {
     const MenuBar = (props) => {
-        console.log("props.fixed en MenuBar_footer: ",props.fixed)
+        console.log("props.fixed en MenuBar_footer: ",props)
         return (
             <Flex
                 justify={Flex.justify.END} 
@@ -30,7 +30,7 @@ export const FooterMenu = (props) => {
                               align={Flex.justify.START}
                               className={'ni-layout-bar-footer-logo'}
                               >
-                            <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} />
+                            <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} hola={'hola'} {...props}/>
                         </Flex>
                         <Flex direction={Flex.directions.COLUMN} 
                               >
@@ -58,9 +58,9 @@ export const FooterMenu = (props) => {
         );
     }
 
-    console.log("props.content en HeaderMenu: ",props.content)
+    console.log("props.content en HeaderMenu: ",props.content, props)
     return (
-        <MenuBar fixed={props.content} />
+        <MenuBar fixed={props.content} {...props}/>
     );
 }
 

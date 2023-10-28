@@ -111,7 +111,6 @@ export const Aboutus = (props) => {
                 <AboutusIntro content={props.aboutus} />
                 <AboutusApproach_title content={props.aboutus} />
                 <AboutusApproach_cards content={props.aboutus} />
-                {/* <AboutusTeam_title content={props.aboutus} /> */}
                 <AboutusTeam content={props.aboutus} />
                 <FooterMenu content={props.footer} />
 

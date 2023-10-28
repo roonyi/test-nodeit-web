@@ -1,4 +1,5 @@
 import { Flex, Box, Button } from 'monday-ui-react-core';
+import React, { useRef } from "react";
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
 import { FooterMenu } from "./footer"; 
@@ -14,6 +15,16 @@ export const Home = (props) => {
             </Box>
         );
     }
+    
+    const viewRef = {
+        menu: useRef(),
+        footer: useRef(),
+        products: useRef()
+    };
+
+    const scrollCallBack = (view) => {
+        viewRef[view]?.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const HomeIntro = (props) => {
 /*        let intros = props.content?.intro.component?.elements
@@ -74,6 +85,7 @@ export const Home = (props) => {
         console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
         return (
             <Flex
+                id={'myproducts'}            
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-products'} 
@@ -109,13 +121,12 @@ export const Home = (props) => {
                 className={'ni-layout-home'} 
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
-                <HeaderMenu content={props.header} />
+                <HeaderMenu refProps={viewRef.menu} scrollCallBack={scrollCallBack} content={props.header} />
                 <HomeIntro content={props.home} />
                 <HomeApproach_title content={props.home} />
                 <HomeApproach_cards content={props.home} />
-                {/* <HomeProducts_title content={props.home} /> */}
-                <HomeProducts content={props.home} />
-                <FooterMenu content={props.footer} />
+                <HomeProducts refProps={viewRef.products} scrollCallBack={scrollCallBack} content={props.home} />
+                <FooterMenu refProps={viewRef.footer} scrollCallBack={scrollCallBack} content={props.footer} />
 
             </Flex>
     );

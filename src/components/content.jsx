@@ -1,4 +1,4 @@
-import { Flex, TextWithHighlight, Button, Accordion, AccordionItem  } from 'monday-ui-react-core';
+import { Flex, TextWithHighlight, Button, Accordion, AccordionItem, Clickable  } from 'monday-ui-react-core';
 import { Link as RouteLink } from "react-router-dom";
 
 export const WebGroup = (props) => {
@@ -24,19 +24,22 @@ export const WebGroup = (props) => {
 export const WebContent = (props) => {
     const styleClass = (props.contentClassName === undefined) ? '' : ` ${props.contentClassName}`;
     const alterClass = (props.alterClassHint === undefined) ? '' : `-${props.alterClassHint}`;
-    console.log("props.info in weblist content: ", props.info)
-    console.log("props.target: ", props.target)
+    // console.log("props.info in weblist content*: ", props.info, props)
+    // console.log("props.target: ", props.target)
     const WebAsset = (props) => {
-        console.log("props.element in content: ", props.element)
+        // console.log("props.element in content: ", props.element, props)
         if (props.element.link === '') {
             return (
                 <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
             )
         } else {
             if (props.element.render === 'Asset') {
+                // console.log("props.element.link",props.element.link, props)
                 return (
                     <RouteLink to={props.element.link} >
-                        <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
+                        <Clickable onClick={()=> props.scrollCallBack('menu')}> 
+                            <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
+                        </Clickable>
                     </RouteLink>
                 )
             } else { //if is Asset_newpage
@@ -48,9 +51,9 @@ export const WebContent = (props) => {
             }
         }
     }
-
+      
     const WebList = (props) => {
-        console.log("props.info.detail in weblist content: ", props.info)
+        // console.log("props.info.detail in weblist content: ", props.info, props)
         return (
             props.info?.map((element) => {
                 switch (element.render) {
@@ -69,7 +72,10 @@ export const WebContent = (props) => {
                           />);
                     case 'Link':
                         return (
-                            <RouteLink key={element.key} to={element.link} state={{entry: element}} className={`ni-layout${alterClass}-link${styleClass}`} >
+                            <RouteLink key={element.key} to={element.link} state={{entry: element}} 
+                            className={`ni-layout${alterClass}-link${styleClass}`} 
+                            //smooth={true} onClick={scroll.scrollTo('/#myproducts')}
+                            >
                                 {element.name}
                             </RouteLink>
                         );
@@ -80,14 +86,15 @@ export const WebContent = (props) => {
                             </RouteLink>
                         );    
                     case 'Asset':
-                        return (<WebAsset key={element.key} element={element} styleClass={styleClass} alterClass={alterClass} />);
+                        console.log("*: ", props)
+                        return (<WebAsset key={element.key} element={element} styleClass={styleClass} alterClass={alterClass} {...props}/>);
                     case 'Asset_newpage':
                         return (<WebAsset key={element.key} element={element} styleClass={styleClass} alterClass={alterClass} target={'_blank'}/>);
                     case 'Accordion':
                         let ques_ans = element.content.split("##")
                         return (
                             <Accordion key={element.key} >
-                                    <AccordionItem title={ques_ans[0]} className={`ni-layout${alterClass}-question${styleClass}`}>
+                                    <AccordionItem title={ques_ans[0]} className={`ni-layout${alterClass}-question${styleClass}`} >
                                         <span className={`ni-layout${alterClass}-answer${styleClass}`}>{ques_ans[1]}</span>
                                     </AccordionItem>
                             </Accordion>
@@ -107,7 +114,8 @@ export const WebContent = (props) => {
                                     <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
                                         <RouteLink key={element.key} to={element.link} >
-                                            <h5 href="#" className='btn btn-primary-card '>{card_cont_btn[0]}</h5>
+                                        {/* <RouteLink key={element.key} href='#myproducts' > */}
+                                            <h5 className='btn btn-primary-card '>{card_cont_btn[0]}</h5>
                                         </RouteLink>    
                                         <h6 className='card-text'>{card_cont_btn[1]}</h6>
                                     </div>
@@ -146,7 +154,7 @@ export const WebContent = (props) => {
             })
         );
     }
-    console.log("props.info in weblist content: ", props.info)
+    // console.log("props.info in weblist content: **", props.info, props)
     return (
         <WebList {...props} />
     );
