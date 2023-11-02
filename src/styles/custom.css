@@ -8,12 +8,12 @@
   --number-block-padding: 20px;
   --number-card-padding: 10px;
   --number-home-padding: 50px;
-  --number-layout-title: 40px;
-  --number-layout-subtitle: 20px;
+  --number-layout-title: 45px;
+  --number-layout-subtitle: 30px;
   --number-layout-faq-question: 20px;
   --number-layout-faq-answer: 15px;
   --number-layout-text: 15px;
-  --number-layout-content-padding: 20%;
+  --number-layout-content-padding: 10%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
   --number-product-logo-height: 2rem;
@@ -174,6 +174,7 @@
   margin: 0px;
   font-size: var(--number-layout-subtitle);
   font-weight: bolder; 
+  /* line-height: 300%; */
 }
 
 :root .ni-layout-logo {
@@ -181,7 +182,7 @@
 }
 
 :root .ni-layout-image {
-  max-width: 80%;
+  max-width: 100%;
 }
 
 :root .ni-layout-image:hover {
@@ -238,8 +239,9 @@
 :root .ni-layout-home, 
 :root .ni-layout-product,
 :root .ni-layout-solutions {
-  width: 100vw;
-  min-height: 100vh;
+  /* width: 100vw; */
+
+  /* min-height: 100vh; */
   padding: 0px;
   margin: 0px;
 }
@@ -286,6 +288,7 @@
 /* Home */
 :root .ni-layout-home {
   height: 100vh;
+  width: 100%;
   color: var(--color-theme-main-background);
   background-color: var(--color-theme-basic-color1);
 }
@@ -294,10 +297,33 @@
   height: 100%;
   width: 100%;
   text-align: center;
-  font-size: var(--number-layout-title);
+  line-height: normal;
   font-weight: bolder; 
   padding-left: 0px;
-  padding-right: 100px; 
+  padding-right: 0px; 
+}
+
+:root .ni-layout-home-intro-title-text {
+  height: 100%;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+:root .ni-layout-home-intro-subtitle {
+  height: 100%;
+  width: 100%;
+  line-height: 300%;
+  /* margin-left: auto !important;
+  margin-right: auto !important; */
+}
+
+:root .ni-layout-home-intro-title-img {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 :root .ni-layout-faq {
@@ -346,12 +372,7 @@
   display: inline-flex;
 }
 
-:root .ni-layout-home-intro-title-text {
-  height: 100%;
-  width: 60%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+
 
 :root .ni-layout-home-approach-title-text {
   height: 100%;
@@ -376,7 +397,7 @@
 :root .ni-layout-card-approach {
   height: 100%;
   width: 100%;
-  padding: 1%;
+  padding: 2%;
   padding-left: 10%;
   padding-right: 10%;
   font-size: var(--number-layout-title);
@@ -399,13 +420,22 @@
   color: var(--color-theme-basic-color1);
   
 }
+:root .ni-layout-home-products-container {
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  border: 0%;
+}
 
 :root .ni-layout-home-products {
   height: 100%;
   width: 100%;
   padding: 5%;
+  padding-left: 0%;
+  border-left: 0%;
   font-size: var(--number-layout-subtitle);
-  /* font-weight: bolder; 
+  /* font-weight: bolder; ss
   background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3)

@@ -5,6 +5,7 @@ import { HeaderMenu } from "./header";
 import { FooterMenu } from "./footer"; 
 //import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export const Home = (props) => {
     console.log("props.header", props.header)
@@ -45,8 +46,21 @@ export const Home = (props) => {
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
-                <HomeBlock detail={props.content?.intro_right.component?.elements} />
+                <Container
+                    >
+                    <Row lg={2} md={2} xs={1}>
+                        <Col >
+                            <Row >     
+                                {/* <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/> */}
+                                <WebContent info={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
+                            </Row>
+                        </Col>
+                        <Col > 
+                            {/* <HomeBlock detail={props.content?.intro_right.component?.elements} /> */}
+                            <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>
+                        </Col>
+                    </Row>    
+                </Container>
             </Flex>
         );
     };
@@ -69,14 +83,21 @@ export const Home = (props) => {
         console.log("props.content?.approach_cards.component?.elements: ", props.content?.approach_cards.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.SPACE_BETWEEN} 
+                justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 // className={'ni-layout-home-approach'} 
                 className={'ni-layout-card-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
-                {/* <HomeBlock detail={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>     */}
+                {/* <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/> */}
+                <Container
+                    align={Flex.justify.CENTER}
+                    // className={'ni-layout-card-approach'}
+                    >
+                    <Row >   
+                        <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
+                    </Row>
+                </Container>
             </Flex>
         );
     };
@@ -84,15 +105,26 @@ export const Home = (props) => {
     const HomeProducts = (props) => {
         console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
         return (
-            <Flex
-                id={'myproducts'}            
-                justify={Flex.justify.SPACE_BETWEEN} 
+            <Flex 
+                // id={'myproducts'}            
+                justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-products'} 
                 direction={Flex.directions.ROW}
-                gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
-                <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/>
+                gap={Flex.gaps.SMALL}
+                >
+                {/* <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/> */}
+                <Container
+                align={Flex.justify.CENTER}
+                // className={'ni-layout-home-products'}
+                >
+                        <Row >   
+                            <Col>
+                                <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
+                            </Col>
+                            <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/>
+                        </Row>
+                </Container>
             </Flex>
         );
     };
@@ -115,20 +147,28 @@ export const Home = (props) => {
         //(props.home === undefined) ? 
             //<Messenger message={'loader'} /> :
             //console.log("prop.header", props.header)
+            // <Container 
+            // className={'ni-layout-home'}
+            // >
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home'} 
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
-                <HeaderMenu refProps={viewRef.menu} scrollCallBack={scrollCallBack} content={props.header} />
-                <HomeIntro content={props.home} />
-                <HomeApproach_title content={props.home} />
-                <HomeApproach_cards content={props.home} />
-                <HomeProducts refProps={viewRef.products} scrollCallBack={scrollCallBack} content={props.home} />
-                <FooterMenu refProps={viewRef.footer} scrollCallBack={scrollCallBack} content={props.footer} />
-
+                <Container fluid
+                >
+                <Row >   
+                    <HeaderMenu refProps={viewRef.menu} scrollCallBack={scrollCallBack} content={props.header} />
+                    <HomeIntro content={props.home} />
+                    <HomeApproach_title content={props.home} />
+                    <HomeApproach_cards content={props.home} />
+                    <HomeProducts refProps={viewRef.products} scrollCallBack={scrollCallBack} content={props.home} />
+                    <FooterMenu refProps={viewRef.footer} scrollCallBack={scrollCallBack} content={props.footer} />
+                </Row>
+                </Container> 
             </Flex>
+            // </Container>
     );
 }
 

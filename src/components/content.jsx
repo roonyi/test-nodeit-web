@@ -1,5 +1,6 @@
 import { Flex, TextWithHighlight, Button, Accordion, AccordionItem, Clickable  } from 'monday-ui-react-core';
 import { Link as RouteLink } from "react-router-dom";
+import { Container, Row, Col } from 'react-bootstrap';
 
 export const WebGroup = (props) => {
     const WebItem = (props) => {
@@ -104,33 +105,35 @@ export const WebContent = (props) => {
                     case 'Card_btn':
                         let card_cont_btn = element.content.split("##")
                         return (
-                            <Flex className={`ni-layout${alterClass}-text${styleClass}`}
-                                    justify={Flex.justify.CENTER} 
-                                    align={Flex.justify.CENTER} 
-                                    direction={Flex.directions.ROW}
-                                    gap={Flex.gaps.SMALL}
-                            >
+                            <Col >
+                              {/* <Flex   className={`ni-layout${alterClass}-text${styleClass}`}
+                                      justify={Flex.justify.CENTER} 
+                                      align={Flex.justify.CENTER} 
+                                      direction={Flex.directions.ROW}
+                                      gap={Flex.gaps.SMALL}
+                              > */}
                                 <div className='card' style={{height: '300px', width:'200px'}}>
                                     <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
                                         <RouteLink key={element.key} to={element.link} >
-                                        {/* <RouteLink key={element.key} href='#myproducts' > */}
                                             <h5 className='btn btn-primary-card '>{card_cont_btn[0]}</h5>
                                         </RouteLink>    
                                         <h6 className='card-text'>{card_cont_btn[1]}</h6>
                                     </div>
                                 </div>
-                            </Flex>
+                             {/* </Flex> */}
+                            </Col>
                         );
                     case 'Card':
                         let card_cont = element.content.split("##")
                         return (
-                            <Flex className={`ni-layout${alterClass}-text${styleClass}`}
+                            <Col>
+                            {/* <Flex className={`ni-layout${alterClass}-text${styleClass}`}
                                   justify={Flex.justify.CENTER} 
                                   align={Flex.justify.CENTER} 
                                   direction={Flex.directions.ROW}
                                   gap={Flex.gaps.SMALL}
-                            >
+                            > */}
                                 <div className='card' style={{height: '300px', width:'200px'}}>
                                     <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
                                     <div className='card-body'>
@@ -138,7 +141,8 @@ export const WebContent = (props) => {
                                         <h6 className='card-text'>{card_cont[1]}</h6>
                                     </div>
                                 </div>
-                            </Flex>
+                            {/* </Flex> */}
+                            </Col>
                         );
                     case 'Button':
                         return (
