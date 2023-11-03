@@ -3,30 +3,30 @@
   --number-main-max-width: 1280px;
   --number-menu-image-height: 6rem;
   --number-footer-image-height: 3rem;
-  --number-menu-padding: 15px;
+  --number-menu-padding: 5px;
   --number-block-padding-footer: 10px;
   --number-block-padding: 20px;
-  --number-card-padding: 10px;
-  --number-home-padding: 50px;
   --number-layout-title: 45px;
   --number-layout-subtitle: 30px;
   --number-layout-faq-question: 20px;
   --number-layout-faq-answer: 15px;
-  --number-layout-text: 15px;
-  --number-layout-content-padding: 10%;
-  --number-layout-modal-title: 75px;
-  --number-product-padding: 24px;
-  --number-product-logo-height: 2rem;
-  --number-solution-padding: 48px;
+  /* --number-layout-text: 15px; */
+  /* --number-layout-content-padding: 10%; */
+  /* --number-layout-modal-title: 75px; */
+  /* --number-product-padding: 24px; */
+  /* --number-product-logo-height: 2rem; */
+  /* --number-solution-padding: 48px;
   --number-layout-faq-title: 36px;
-  --number-list-padding: 36px;
-  --number-messenger-logo-height: 2rem;
-  --number-solutions-grid-gap: 24px;
+  --number-list-padding: 36px; */
+  /* --number-messenger-logo-height: 2rem; */
+  /* --number-solutions-grid-gap: 24px;
   --number-solutions-logo-height: 96px;
   --number-solutions-logo-offset: calc(-1*50% + var(--number-solutions-logo-height) * 0.5);
-  --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3);
-  --color-theme-main-foreground: var(--primary-text-color);
-  --color-theme-main-background: var(--primary-background-color);
+  --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3); */
+  /* --color-theme-main-foreground: var(--primary-text-color); */
+  --color-theme-main-foreground: var(--color-theme-basic-color3);
+  --color-theme-main-background: var(--color-theme-basic-color3);
+    /*--color-theme-main-background: var(--primary-background-color);*/
   --color-theme-basic-color1: #8511EC;
   --color-theme-basic-color2: #AFFFD3;
   --color-theme-basic-color3: #F6F5FA;
@@ -35,9 +35,9 @@
   --color-theme-alter-color2: #AFFFD3;
   --color-theme-alter-color3: #2E2E2E;
   --color-theme-alter-color4: #313131;
-  --color-theme-modif-shade1: #fff9;
+  /* --color-theme-modif-shade1: #fff9;
   --color-theme-modif-shade2: #5ff3a0ff;
-  --color-theme-modif-shade3: #50e190ff;
+  --color-theme-modif-shade3: #50e190ff; */
 }
 
 /* Additional custom variables */
@@ -72,35 +72,16 @@
   max-width: var(--number-main-max-width);
   min-height: 100vh;
 }
-
-/* General style (custom components) */
-:root .ni-layout-bar {
-  background-color: var(--color-theme-alter-color1);
-  padding: var(--number-menu-padding);
-  color: var(--color-theme-main-foreground);
-  width: 100%;
-}
-
-:root .ni-layout-bar-footer {
-  background-color: var(--color-theme-alter-color4);
-  margin-top: 0px;
-  padding: var(--number-block-padding-footer);
-  color: var(--color-theme-main-foreground);
-  width: 100%;
-  /* align-items: center !important; */
-}
-
-:root .ni-layout-bar-footer-sn {
-  background-color: var(--color-theme-alter-color4);
-  margin-top: 0px;
-  padding: var(--number-block-padding-footer);
-  color: var(--color-theme-main-foreground);
-  width:40%;
+/* START alterClassHint -> sub-components that can be use in several components */
+:root .ni-layout-bar-image {
+  height: var(--number-menu-image-height);
+  /* object-fit: cover; */
 }
 
 :root .ni-layout-bar-link {
   color: var(--color-theme-main-background);
   padding: var(--number-block-padding);
+  align-items: right;
 }
 
 :root .ni-layout-bar-text {
@@ -108,140 +89,13 @@
   padding: var(--number-block-padding);
 }
 
-:root .ni-layout-card-text {
-  color: var(--color-theme-main-background);
-  padding: var(--number-card-padding);
-  width: 50%
-}
+/* END alterClassHint */
 
-:root .ni-layout-card-image {
-  color: var(--color-theme-main-background);
-  padding: var(--number-card-padding);
-  width: 200px;
-  height: 240px;
-}
 
-:root .btn-primary-card {
-  color: var(--color-theme-basic-color4);
-  background-color: var(--color-theme-basic-color2);
-  border: none;
-}
-
-:root .btn-primary-card:hover {
-  background-color: var(--color-theme-basic-color1);
-  color:var(--color-theme-basic-color3);
-}
-
-:root .ni-layout-bar-image {
-  height: var(--number-menu-image-height);
-  /* object-fit: cover; */
-}
-
-:root .ni-layout-bar-footer-logo {
-  padding-left: 15%;
-  padding-right: 8%;
-}
-
-:root .ni-layout-bar-footer-image {
-  height: var(--number-footer-image-height);
-  padding: var(--number-block-padding-footer);
-  /* object-fit: cover; */
-}
-
-/* :root .ni-layout-bar-footer-text {
-  height: var(--number-footer-image-height);
-  padding: var(--number-block-padding-footer);
-  border-bottom: auto !important;
-  object-fit: cover;
-} */
-
-:root .ni-layout-block-header {
-  text-align: left;
-}
-
-:root .ni-layout-block-footer {
-  text-align: center;
-}
-
-:root .ni-layout-title {
-  margin: 0px;
-  font-size: var(--number-layout-title);
-  font-weight: bolder; 
-  width: 100%;
-}
-
-:root .ni-layout-subtitle {
-  margin: 0px;
-  font-size: var(--number-layout-subtitle);
-  font-weight: bolder; 
-  /* line-height: 300%; */
-}
-
-:root .ni-layout-logo {
-  height: var(--number-product-logo-height);
-}
-
-:root .ni-layout-image {
-  max-width: 100%;
-}
-
-:root .ni-layout-image:hover {
-  opacity: 1;
-}
-
-:root .ni-layout-text {
-  color: var(--color-theme-main-background);
-  margin: 0px;
-  /* white-space: pre-line; */
-  text-align: left;
-  /* font-size: large; */
-}
-
-:root .ni-layout-main,
-:root .ni-layout-highlight,
-:root .ni-layout-solutions-grid {
-  width: 100%;
-  margin: 0px;
-  padding-top: var(--number-product-padding);
-  padding-bottom: var(--number-product-padding);
-}
-
-:root .ni-layout-highlight {
-  padding-right: 40% !important;
-  background-color: var(--color-theme-basic-color1);
-}
-
-:root .ni-layout-main .ni-layout-title {
-  color: var(--color-theme-basic-color1);
-}
-
-:root .ni-layout-highlight .ni-layout-title {
-  color: var(--color-theme-basic-color2);
-  text-align: left;
-}
-
-:root .ni-layout-list {
-  padding-bottom: var(--number-list-padding);
-}
-
-:root .ni-layout-home-block-left {
-  text-align: left;
-}
-
-:root .ni-layout-text-footer {
-  /* height: 100vh; */
-  color: var(--color-theme-main-background);
-  padding: var(--number-block-padding-footer);
-  width: 100%;
-}
-
-/* Common style attributes */
+/* START Common style attributes */
 :root .ni-layout-home, 
 :root .ni-layout-product,
 :root .ni-layout-solutions {
-  /* width: 100vw; */
-
-  /* min-height: 100vh; */
   padding: 0px;
   margin: 0px;
 }
@@ -280,12 +134,68 @@
   color: var(--color-theme-main-foreground);
   background-color: var(--color-theme-main-background);
 }
+/* END Common style attributes */
 
-/* Header - uses general style */
+/* START HEADER */
+:root .ni-layout-bar {
+  background-color: var(--color-theme-alter-color1);
+  padding: var(--number-menu-padding);
+  color: var(--color-theme-main-foreground);
+  width: 100%;
+}
 
-/* Footer - uses general style*/
+:root .ni-layout-bar-header-logo {
+  align-items: left;
+  text-align: left !important;
+  background-color: var(--color-theme-alter-color1);
+  padding: var(--number-menu-padding);
+  color: var(--color-theme-main-foreground);
+  width: 100%;
+}
 
-/* Home */
+:root .ni-layout-bar-header-link {
+  text-align: right !important;
+  background-color: var(--color-theme-alter-color1);
+  margin: 4%;
+  color: var(--color-theme-main-foreground);
+  width: 100%;
+  
+}
+/* END HEADER */
+
+/*  START Footer */
+:root .ni-layout-bar-footer {
+  background-color: var(--color-theme-alter-color4);
+  padding: var(--number-block-padding-footer);
+  color: var(--color-theme-main-foreground);
+  width: 100%;
+  text-align: left;
+}
+
+:root .ni-layout-bar-footer-logo {
+  padding-left: 40%;
+  margin-bottom: 0%;
+}
+
+:root .ni-layout-bar-footer-text-cr_sn {
+  padding-top: 3%;
+  padding-left: 50%;
+}
+
+:root .ni-layout-text-footer {
+  color: var(--color-theme-main-background);
+  padding: var(--number-block-padding-footer);
+  width: 100%;
+}
+
+:root .ni-layout-bar-footer-image {
+  height: var(--number-footer-image-height);
+  padding: var(--number-block-padding-footer);
+}
+/*  END Footer */
+
+
+/* START HOME */
 :root .ni-layout-home {
   height: 100vh;
   width: 100%;
@@ -296,11 +206,17 @@
 :root .ni-layout-home-intro {
   height: 100%;
   width: 100%;
-  text-align: center;
+  padding-left: 5%;
+  text-align: left;
   line-height: normal;
   font-weight: bolder; 
-  padding-left: 0px;
-  padding-right: 0px; 
+  /* padding-left: 0px;
+  padding-right: 0px;  */
+}
+
+:root .ni-layout-home-intro-text {
+  font-size: var(--number-layout-text) !important;
+  display: inline-flex;
 }
 
 :root .ni-layout-home-intro-title-text {
@@ -314,8 +230,6 @@
   height: 100%;
   width: 100%;
   line-height: 300%;
-  /* margin-left: auto !important;
-  margin-right: auto !important; */
 }
 
 :root .ni-layout-home-intro-title-img {
@@ -325,12 +239,13 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
+/* END HOME */
 
+
+/* START FAQ */
 :root .ni-layout-faq {
   height: 100%;
   width: 100%;
-  /* font-size: var(--number-layout-title); */
-  /* font-weight: bold; */
   padding: 5%; 
   padding-left: 100px;
   padding-right: 100px; 
@@ -360,19 +275,102 @@
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3);
 }
+/* END FAQ */
 
+
+:root .ni-layout-card-text {
+  color: var(--color-theme-main-background);
+  padding: var(--number-card-padding);
+  width: 50%
+}
+
+:root .ni-layout-card-image {
+  color: var(--color-theme-main-background);
+  padding: var(--number-card-padding);
+  width: 200px;
+  height: 240px;
+}
+
+:root .btn-primary-card {
+  color: var(--color-theme-basic-color4);
+  background-color: var(--color-theme-basic-color2);
+  border: none;
+}
+
+:root .btn-primary-card:hover {
+  background-color: var(--color-theme-basic-color1);
+  color:var(--color-theme-basic-color3);
+}
+
+:root .ni-layout-block-header {
+  text-align: left;
+}
+
+:root .ni-layout-block-footer {
+  text-align: center;
+}
+
+:root .ni-layout-title {
+  margin: 0px;
+  font-size: var(--number-layout-title);
+  font-weight: bolder; 
+  width: 100%;
+}
+
+:root .ni-layout-subtitle {
+  margin: 0px;
+  font-size: var(--number-layout-subtitle);
+  font-weight: bolder; 
+  /* line-height: 300%; */
+}
+
+:root .ni-layout-logo {
+  height: var(--number-product-logo-height);
+}
+
+:root .ni-layout-image {
+  max-width: 100%;
+}
+
+:root .ni-layout-image:hover {
+  opacity: 1;
+}
+
+:root .ni-layout-text {
+  color: var(--color-theme-main-background);
+  margin: 0px;
+  text-align: left;
+}
+
+:root .ni-layout-highlight {
+  padding-right: 40% !important;
+  background-color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-main .ni-layout-title {
+  color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-highlight .ni-layout-title {
+  color: var(--color-theme-basic-color2);
+  text-align: left;
+}
+
+:root .ni-layout-list {
+  padding-bottom: var(--number-list-padding);
+}
+
+:root .ni-layout-home-block-left {
+  text-align: left;
+}
+
+
+/* //////////////////////// */
 :root .ni-layout-who-we-are-intro {
   width: 200%;
   font-weight: bolder; 
   margin-bottom: 5%;
 }
-
-:root .ni-layout-home-intro-text {
-  font-size: var(--number-layout-text) !important;
-  display: inline-flex;
-}
-
-
 
 :root .ni-layout-home-approach-title-text {
   height: 100%;
@@ -380,16 +378,13 @@
   padding: 3%;
   margin-left: auto !important;
   margin-right: auto !important;
-  /* margin-bottom: 0%; */
 }
 
 :root .ni-layout-home-approach {
   height: 100%;
   width: 100%;
-  /* padding: 3%; */
   font-size: var(--number-layout-title);
   font-weight: bolder; 
-  /* background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color2);
   color: var(--color-theme-basic-color1);
 }
@@ -401,8 +396,6 @@
   padding-left: 10%;
   padding-right: 10%;
   font-size: var(--number-layout-title);
-  /* font-weight: bolder;  */
-  /* background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color2);
   color: var(--color-theme-basic-color1);
   
@@ -414,8 +407,6 @@
   padding-left: 10%;
   padding-right: 10%;
   font-size: var(--number-layout-title);
-  /* font-weight: bolder;  */
-  /* background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-basic-color1);
   
@@ -435,8 +426,6 @@
   padding-left: 0%;
   border-left: 0%;
   font-size: var(--number-layout-subtitle);
-  /* font-weight: bolder; ss
-  background-repeat: no-repeat; */
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3)
 }
@@ -461,9 +450,8 @@
   color: var(--color-theme-basic-color1);
 }
 
-/* Product - uses general style */
 
-/* Solutions (card, grid and modal) */
+/* Solutions (card, grid and modal)
 :root .ni-layout-solutions-grid {
   width: 100%;
 }
@@ -559,10 +547,10 @@
 :root .ni-modal-footer-button:hover {
   background-color: var(--color-theme-alter-color1) !important;
   color: var(--color-theme-main-background) !important;
-}
+} */
 
 /* FAQ */
-:root .ni-layout-faq-list .ni-layout-list .ni-layout-title {
+/* :root .ni-layout-faq-list .ni-layout-list .ni-layout-title {
   font-weight: bolder;
   font-size: var(--number-layout-faq-title);
   color: var(--color-theme-main-foreground);
@@ -572,10 +560,10 @@
 :root .ni-layout-faq-list .ni-layout-list .ni-layout-text {
   color: var(--color-theme-alter-color4);
   text-align: left;
-}
+} */
 
 /* Messenger */
-:root .ni-messenger-loader,
+/* :root .ni-messenger-loader,
 :root .ni-messenger-notFound {
   background-position: center;
   background-repeat: no-repeat;
@@ -603,29 +591,4 @@
   object-fit: cover;
   text-align: left;
   object-position: left;
-}
-
-/* Workdoc */
-:root .ni-layout-workdoc {
-  width: 100vw;
-  height: 100vh;
-  padding: 0px;
-  margin: 0px;
-}
-
-:root .ni-layout-workdoc-info {
-  height: 100%;
-  width: 100%;
-}
-
-/* Hide browser scrollbar to keep visual strcuture */
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background: transparent; /* make scrollbar transparent */
-}
-
-/* Correct icon alignment in modal title */
-:root span[class^="ModalHeader-module_icon"] {
-  vertical-align: top;
-}
+} */

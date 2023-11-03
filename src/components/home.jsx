@@ -9,13 +9,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export const Home = (props) => {
     console.log("props.header", props.header)
-    const HomeBlock = (props) => {
-        return (
-            <Box className={'ni-layout-home-block'}  >
-                <WebContent info={props.detail}  contentClassName={props.contentClassName} alterClassHint={props.alterClassHint}/>
-            </Box>
-        );
-    }
     
     const viewRef = {
         menu: useRef(),
@@ -46,17 +39,19 @@ export const Home = (props) => {
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <Container
+                <Container fluid
                     >
-                    <Row lg={2} md={2} xs={1}>
-                        <Col >
-                            <Row >     
-                                {/* <HomeBlock detail={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/> */}
-                                <WebContent info={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
+                    <Row >    
+                        <Col sm="5" >
+                            <Row >
+                                <Flex
+                                // className={'ni-layout-home-intro'} 
+                                direction={Flex.directions.COLUMN}>
+                                    <WebContent info={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
+                                </Flex>
                             </Row>
                         </Col>
                         <Col > 
-                            {/* <HomeBlock detail={props.content?.intro_right.component?.elements} /> */}
                             <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>
                         </Col>
                     </Row>    
@@ -68,13 +63,17 @@ export const Home = (props) => {
     const HomeApproach_title = (props) => {
         console.log("props.content?.approach_title.component?.elements: ", props.content?.approach_title.component?.elements)
         return (
-            <Flex
+            <Flex 
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <HomeBlock detail={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
+                <Container fluid>
+                    <Col>
+                        <WebContent info={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
+                    </Col>
+                </Container>    
             </Flex>
         );
     };
@@ -82,17 +81,14 @@ export const Home = (props) => {
     const HomeApproach_cards = (props) => {
         console.log("props.content?.approach_cards.component?.elements: ", props.content?.approach_cards.component?.elements)
         return (
-            <Flex
+            <Flex 
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                // className={'ni-layout-home-approach'} 
                 className={'ni-layout-card-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                {/* <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/> */}
-                <Container
+                <Container fluid
                     align={Flex.justify.CENTER}
-                    // className={'ni-layout-card-approach'}
                     >
                     <Row >   
                         <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
@@ -105,22 +101,19 @@ export const Home = (props) => {
     const HomeProducts = (props) => {
         console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
         return (
-            <Flex 
-                // id={'myproducts'}            
+            <Flex  
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-products'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL}
                 >
-                {/* <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/> */}
-                <Container
+                <Container fluid
                 align={Flex.justify.CENTER}
-                // className={'ni-layout-home-products'}
                 >
                         <Row >   
                             <Col>
-                                <HomeBlock detail={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
+                                <WebContent info={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
                             </Col>
                             <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/>
                         </Row>
@@ -129,20 +122,6 @@ export const Home = (props) => {
         );
     };
 
-    // const HomeProducts = (props) => {
-    //     console.log("props.content?.products.component?.elements: ", props.content?.products.component?.elements)
-    //     return (
-    //         <Flex
-    //             justify={Flex.justify.CENTER} 
-    //             align={Flex.justify.CENTER} 
-    //             className={'ni-layout-card-products'} 
-    //             direction={Flex.directions.ROW}
-    //             gap={Flex.gaps.SMALL} >
-    //             {/* <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/> */}
-    //         </Flex>
-    //     );
-    // };
-
     return (
         //(props.home === undefined) ? 
             //<Messenger message={'loader'} /> :
@@ -150,7 +129,7 @@ export const Home = (props) => {
             // <Container 
             // className={'ni-layout-home'}
             // >
-            <Flex
+            <Flex 
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home'} 
@@ -168,7 +147,6 @@ export const Home = (props) => {
                 </Row>
                 </Container> 
             </Flex>
-            // </Container>
     );
 }
 
