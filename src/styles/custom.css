@@ -89,6 +89,10 @@
   padding: var(--number-block-padding);
 }
 
+
+:root .ni-layout-image {
+  max-width: 90%;
+}
 /* END alterClassHint */
 
 
@@ -204,19 +208,27 @@
 }
 
 :root .ni-layout-home-intro {
-  height: 100%;
-  width: 100%;
-  padding-left: 5%;
   text-align: left;
   line-height: normal;
-  font-weight: bolder; 
-  /* padding-left: 0px;
-  padding-right: 0px;  */
+  margin-bottom: 0%;
+  border-bottom: 0%;
+  padding-bottom: 0%;
+}
+
+:root .ni-layout-home-intro-left {
+  padding-left: 5%;
+  margin-top: 15%;
+}
+
+:root .ni-layout-home-intro-title-img {
+  height: 100%;
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 :root .ni-layout-home-intro-text {
   font-size: var(--number-layout-text) !important;
-  display: inline-flex;
 }
 
 :root .ni-layout-home-intro-title-text {
@@ -229,16 +241,10 @@
 :root .ni-layout-home-intro-subtitle {
   height: 100%;
   width: 100%;
-  line-height: 300%;
+  line-height: 00%;
 }
 
-:root .ni-layout-home-intro-title-img {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+
 /* END HOME */
 
 
@@ -326,10 +332,6 @@
 
 :root .ni-layout-logo {
   height: var(--number-product-logo-height);
-}
-
-:root .ni-layout-image {
-  max-width: 100%;
 }
 
 :root .ni-layout-image:hover {

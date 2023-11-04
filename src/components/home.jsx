@@ -42,17 +42,23 @@ export const Home = (props) => {
                 <Container fluid
                     >
                     <Row >    
-                        <Col sm="5" >
-                            <Row >
+                        <Col sm="5" 
+                        className={'ni-layout-home-intro-left'}
+                         >                            
                                 <Flex
-                                // className={'ni-layout-home-intro'} 
-                                direction={Flex.directions.COLUMN}>
+                                gap={Flex.gaps.LARGE}
+                                // className={'ni-layout-home-intro-left'}
+                                direction={Flex.directions.COLUMN}>      
                                     <WebContent info={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
                                 </Flex>
-                            </Row>
                         </Col>
-                        <Col > 
-                            <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>
+                        <Col >
+                        <Flex
+                                gap={Flex.gaps.MEDIUM}
+                                // className={'ni-layout-home-intro-right'}
+                                direction={Flex.directions.COLUMN}>   
+                            <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>    
+                            </Flex>
                         </Col>
                     </Row>    
                 </Container>
