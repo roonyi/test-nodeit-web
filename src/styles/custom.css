@@ -121,6 +121,7 @@
 
 :root .ni-layout-home-intro,
 :root .ni-layout-home-approach,
+:root .ni-layout-wwa-approach,
 :root .ni-layout-home-products,
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
@@ -131,6 +132,7 @@
 
 :root .ni-layout-home-intro,
 :root .ni-layout-home-approach,
+:root .ni-layout-wwa-approach,
 :root .ni-layout-main,
 :root .ni-layout-highlight,
 :root .ni-layout-intro,
@@ -215,6 +217,7 @@
   margin-bottom: 0%;
   border-bottom: 0%;
   padding-bottom: 0%;
+  /* color: var(--color-theme-main-background); */
 }
 
 :root .ni-layout-home-intro-left {
@@ -240,6 +243,25 @@
   margin-right: auto !important;
 }
 
+:root .ni-layout-home-approach {
+  height: 100%;
+  width: 100%;
+  font-size: var(--number-layout-title);
+  font-weight: bolder; 
+  background-color: var(--color-theme-basic-color2);
+  color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-home-approach-title-text {
+  height: 100%;
+  width: 100%;
+  padding: 3%;
+  /* margin-left: auto !important;
+  margin-right: auto !important; */
+  line-height: 150%;
+  color: var(--color-theme-basic-color1);
+}
+
 :root .ni-layout-home-products {
   height: 100%;
   width: 100%;
@@ -262,30 +284,34 @@
 
 /* START ABOUT US */
 
-:root .ni-layout-who-we-are-intro-right {
+:root .ni-layout-wwa-intro-right {
   margin-bottom: 5%;
   margin-right: 8%;
+  line-height: 150%;
+  color: var(--color-theme-main-background);
 }
 
-:root .ni-layout-who-we-are-intro-left {
+:root .ni-layout-wwa-intro-left {
   padding-left: 10%;
   padding-right: 10%;
   margin-top: 15%;
+  color: var(--color-theme-main-background);
 }
 
-:root .ni-layout-home-approach-title-text {
+:root .ni-layout-wwa-approach-title-text {
   height: 100%;
   width: 100%;
   padding: 3%;
   margin-left: auto !important;
   margin-right: auto !important;
+  line-height: 150%;
+  /* font-size: var(--number-layout-text); */
 }
 
-:root .ni-layout-home-approach {
+:root .ni-layout-wwa-approach {
   height: 100%;
   width: 100%;
-  font-size: var(--number-layout-title);
-  font-weight: bolder; 
+  /* font-weight: bolder;  */
   background-color: var(--color-theme-basic-color2);
   color: var(--color-theme-basic-color1);
 }
@@ -425,7 +451,6 @@
 }
 
 :root .ni-layout-text {
-  color: var(--color-theme-main-background);
   margin: 0px;
   text-align: left;
 }

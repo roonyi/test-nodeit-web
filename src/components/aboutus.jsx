@@ -23,18 +23,18 @@ export const Aboutus = (props) => {
                     >
                     <Row >    
                         <Col sm="4"
-                        className={'ni-layout-who-we-are-intro-left'}
+                        className={'ni-layout-wwa-intro-left'}
                         >
                             <Flex
                                 gap={Flex.gaps.LARGE}
-                                // className={'ni-layout-who-we-are-intro-left'}
+                                // className={'ni-layout-wwa-intro-left'}
                                 direction={Flex.directions.COLUMN}> 
                                 <WebContent info={props.content?.who_we_are_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>                
                             </Flex>
                         </Col>
                         <Col>
                             <Flex
-                            className={'ni-layout-who-we-are-intro-right'} 
+                            className={'ni-layout-wwa-intro-right'} 
                             direction={Flex.directions.COLUMN}
                             gap={Flex.gaps.LARGE} 
                             >
@@ -54,10 +54,14 @@ export const Aboutus = (props) => {
             <Flex
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home-approach'} 
+                className={'ni-layout-wwa-approach'} 
                 direction={Flex.directions.COLUMN}
                 gap={Flex.gaps.SMALL} >
-                <WebContent info={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
+                <Container fluid>
+                    <Col>
+                        <WebContent info={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-wwa-approach-title-text'}/>
+                    </Col>
+                </Container>
             </Flex>
         );
     };
@@ -71,7 +75,18 @@ export const Aboutus = (props) => {
                 className={'ni-layout-card-approach'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
+                <Container fluid>
+                    <Row
+                    align={Flex.justify.CENTER}
+                    >
+                        {/* <Flex
+                            className={'ni-layout-card-approach'} 
+                            direction={Flex.directions.ROW}
+                            gap={Flex.gaps.SMALL} > */}
+                            <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
+                        {/* </Flex> */}
+                    </Row>
+                </Container>
             </Flex>
         );
     };
@@ -85,8 +100,27 @@ export const Aboutus = (props) => {
                 className={'ni-layout-home-products'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <WebContent info={props.content?.team_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
-                <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/>
+                <Container fluid>
+                    <Row
+                    align={Flex.justify.CENTER}>
+                    <Col sm="3" lg="3">
+                        <Flex
+                        className={'ni-layout-home-products'} 
+                        direction={Flex.directions.COLUMN}
+                        gap={Flex.gaps.SMALL} >
+                            <WebContent info={props.content?.team_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
+                        </Flex>
+                    </Col>
+                    {/* <Col lg="2">
+                        <Flex
+                        className={'ni-layout-home-products'} 
+                        direction={Flex.directions.ROW}
+                        gap={Flex.gaps.SMALL} > */}
+                            <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/>
+                        {/* </Flex>
+                    </Col> */}
+                    </Row>
+                </Container>    
             </Flex>
         );
     };
