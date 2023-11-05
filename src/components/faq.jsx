@@ -55,7 +55,7 @@ export const Faq = (props) => {
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home'} 
+                className={'ni-layout-general'} 
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
                 <HeaderMenu content={props.header} />

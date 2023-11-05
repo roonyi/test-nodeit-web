@@ -4,17 +4,11 @@ import { HeaderMenu } from "./header";
 import { FooterMenu } from "./footer"; 
 //import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export const Aboutus = (props) => {
     console.log("props.header", props.header)
-    const AboutusBlock = (props) => {
-        return (
-            <Box className={'ni-layout-home-block'}  >
-                <WebContent info={props.detail}  contentClassName={props.contentClassName} alterClassHint={props.alterClassHint}/>
-            </Box>
-        );
-    }
-
+    
     const AboutusIntro = (props) => {
         console.log("props.content?.who_we_are_left.component?.elements: ", props.content?.who_we_are_left.component?.elements)
         return (
@@ -25,16 +19,30 @@ export const Aboutus = (props) => {
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} 
                 >
-                <AboutusBlock detail={props.content?.who_we_are_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>                
-                <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.START} 
-                className={'ni-layout-who-we-are-intro'} 
-                direction={Flex.directions.COLUMN}
-                gap={Flex.gaps.SMALL} 
-                >
-                <AboutusBlock detail={props.content?.who_we_are_right.component?.elements} contentClassName={'ni-layout-home-intro-text'} />
-                </Flex>
+                <Container fluid
+                    >
+                    <Row >    
+                        <Col sm="4"
+                        className={'ni-layout-who-we-are-intro-left'}
+                        >
+                            <Flex
+                                gap={Flex.gaps.LARGE}
+                                // className={'ni-layout-who-we-are-intro-left'}
+                                direction={Flex.directions.COLUMN}> 
+                                <WebContent info={props.content?.who_we_are_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>                
+                            </Flex>
+                        </Col>
+                        <Col>
+                            <Flex
+                            className={'ni-layout-who-we-are-intro-right'} 
+                            direction={Flex.directions.COLUMN}
+                            gap={Flex.gaps.LARGE} 
+                            >
+                                <WebContent info={props.content?.who_we_are_right.component?.elements} contentClassName={'ni-layout-home-intro-text'} />
+                            </Flex>
+                        </Col>
+                    </Row>
+                </Container>    
             </Flex>
             
         );
@@ -47,9 +55,9 @@ export const Aboutus = (props) => {
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-approach'} 
-                direction={Flex.directions.ROW}
+                direction={Flex.directions.COLUMN}
                 gap={Flex.gaps.SMALL} >
-                <AboutusBlock detail={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
+                <WebContent info={props.content?.approach_title.component?.elements} contentClassName={'ni-layout-home-approach-title-text'}/>
             </Flex>
         );
     };
@@ -77,25 +85,11 @@ export const Aboutus = (props) => {
                 className={'ni-layout-home-products'} 
                 direction={Flex.directions.ROW}
                 gap={Flex.gaps.SMALL} >
-                <AboutusBlock detail={props.content?.team_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
+                <WebContent info={props.content?.team_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
                 <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/>
             </Flex>
         );
     };
-
-    // const AboutusTeam = (props) => {
-    //     console.log("props.content?.team.component?.elements: ", props.content?.team.component?.elements)
-    //     return (
-    //         <Flex
-    //             justify={Flex.justify.CENTER} 
-    //             align={Flex.justify.CENTER} 
-    //             className={'ni-layout-card-products'} 
-    //             direction={Flex.directions.ROW}
-    //             gap={Flex.gaps.SMALL} >
-    //             {/* <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/> */}
-    //         </Flex>
-    //     );
-    // };
 
     return (
         //(props.home === undefined) ? 
@@ -104,16 +98,20 @@ export const Aboutus = (props) => {
             <Flex
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home'} 
+                className={'ni-layout-general'} 
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
-                <HeaderMenu content={props.header} />
-                <AboutusIntro content={props.aboutus} />
-                <AboutusApproach_title content={props.aboutus} />
-                <AboutusApproach_cards content={props.aboutus} />
-                <AboutusTeam content={props.aboutus} />
-                <FooterMenu content={props.footer} />
-
+                <Container fluid
+                >
+                <Row >
+                    <HeaderMenu content={props.header} />
+                    <AboutusIntro content={props.aboutus} />
+                    <AboutusApproach_title content={props.aboutus} />
+                    <AboutusApproach_cards content={props.aboutus} />
+                    <AboutusTeam content={props.aboutus} />
+                    <FooterMenu content={props.footer} />
+                </Row>    
+                </Container>
             </Flex>
     );
 }

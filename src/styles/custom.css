@@ -97,6 +97,14 @@
 
 
 /* START Common style attributes */
+
+:root .ni-layout-general {
+  height: 100vh;
+  width: 100%;
+  color: var(--color-theme-main-background);
+  background-color: var(--color-theme-basic-color1);
+}
+
 :root .ni-layout-home, 
 :root .ni-layout-product,
 :root .ni-layout-solutions {
@@ -141,7 +149,7 @@
 /* END Common style attributes */
 
 /* START HEADER */
-:root .ni-layout-bar {
+:root .ni-layout-bar-header {
   background-color: var(--color-theme-alter-color1);
   padding: var(--number-menu-padding);
   color: var(--color-theme-main-foreground);
@@ -200,12 +208,6 @@
 
 
 /* START HOME */
-:root .ni-layout-home {
-  height: 100vh;
-  width: 100%;
-  color: var(--color-theme-main-background);
-  background-color: var(--color-theme-basic-color1);
-}
 
 :root .ni-layout-home-intro {
   text-align: left;
@@ -216,7 +218,7 @@
 }
 
 :root .ni-layout-home-intro-left {
-  padding-left: 5%;
+  padding-left: 8%;
   margin-top: 15%;
 }
 
@@ -238,140 +240,37 @@
   margin-right: auto !important;
 }
 
-:root .ni-layout-home-intro-subtitle {
+:root .ni-layout-home-products {
   height: 100%;
   width: 100%;
-  line-height: 00%;
+  padding: 8%;
+  padding-left: 0%;
+  border-left: 0%;
+  font-size: var(--number-layout-subtitle);
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3)
+}
+
+:root .ni-layout-home-products-title {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 
 /* END HOME */
 
 
-/* START FAQ */
-:root .ni-layout-faq {
-  height: 100%;
-  width: 100%;
-  padding: 5%; 
-  padding-left: 100px;
-  padding-right: 100px; 
-  background-color: var(--color-theme-basic-color3);
-  color: var(--color-theme-alter-color3);
-}
+/* START ABOUT US */
 
-:root .ni-layout-faq-question {
-  height: 100%;
-  width: 100%;
-  font-size: var(--number-layout-faq-question);
-  font-weight:bolder; 
-  text-align: left;
-  padding-left: 0px;
-  padding-right: 0px; 
-  background-color: var(--color-theme-basic-color3);
-  color: var(--color-theme-alter-color3);
-}
-
-:root .ni-layout-faq-answer {
-  height: 100%;
-  width: 100%;
-  font-size: var(--number-layout-faq-answer);
-  padding-left: 15px;
-  padding-right: 0px;
-  text-align: left; 
-  background-color: var(--color-theme-basic-color3);
-  color: var(--color-theme-alter-color3);
-}
-/* END FAQ */
-
-
-:root .ni-layout-card-text {
-  color: var(--color-theme-main-background);
-  padding: var(--number-card-padding);
-  width: 50%
-}
-
-:root .ni-layout-card-image {
-  color: var(--color-theme-main-background);
-  padding: var(--number-card-padding);
-  width: 200px;
-  height: 240px;
-}
-
-:root .btn-primary-card {
-  color: var(--color-theme-basic-color4);
-  background-color: var(--color-theme-basic-color2);
-  border: none;
-}
-
-:root .btn-primary-card:hover {
-  background-color: var(--color-theme-basic-color1);
-  color:var(--color-theme-basic-color3);
-}
-
-:root .ni-layout-block-header {
-  text-align: left;
-}
-
-:root .ni-layout-block-footer {
-  text-align: center;
-}
-
-:root .ni-layout-title {
-  margin: 0px;
-  font-size: var(--number-layout-title);
-  font-weight: bolder; 
-  width: 100%;
-}
-
-:root .ni-layout-subtitle {
-  margin: 0px;
-  font-size: var(--number-layout-subtitle);
-  font-weight: bolder; 
-  /* line-height: 300%; */
-}
-
-:root .ni-layout-logo {
-  height: var(--number-product-logo-height);
-}
-
-:root .ni-layout-image:hover {
-  opacity: 1;
-}
-
-:root .ni-layout-text {
-  color: var(--color-theme-main-background);
-  margin: 0px;
-  text-align: left;
-}
-
-:root .ni-layout-highlight {
-  padding-right: 40% !important;
-  background-color: var(--color-theme-basic-color1);
-}
-
-:root .ni-layout-main .ni-layout-title {
-  color: var(--color-theme-basic-color1);
-}
-
-:root .ni-layout-highlight .ni-layout-title {
-  color: var(--color-theme-basic-color2);
-  text-align: left;
-}
-
-:root .ni-layout-list {
-  padding-bottom: var(--number-list-padding);
-}
-
-:root .ni-layout-home-block-left {
-  text-align: left;
-}
-
-
-/* //////////////////////// */
-:root .ni-layout-who-we-are-intro {
-  width: 200%;
-  font-weight: bolder; 
+:root .ni-layout-who-we-are-intro-right {
   margin-bottom: 5%;
+  margin-right: 8%;
+}
+
+:root .ni-layout-who-we-are-intro-left {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 15%;
 }
 
 :root .ni-layout-home-approach-title-text {
@@ -421,22 +320,6 @@
   border: 0%;
 }
 
-:root .ni-layout-home-products {
-  height: 100%;
-  width: 100%;
-  padding: 5%;
-  padding-left: 0%;
-  border-left: 0%;
-  font-size: var(--number-layout-subtitle);
-  background-color: var(--color-theme-basic-color3);
-  color: var(--color-theme-alter-color3)
-}
-
-:root .ni-layout-home-products-title {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 :root .ni-layout-home-team {
   height: 100%;
 }
@@ -450,6 +333,123 @@
 :root .ni-home-button:hover {
   background-color: var(--color-theme-main-background);
   color: var(--color-theme-basic-color1);
+}
+
+
+/* END ABOUT US */
+
+
+/* START FAQ */
+:root .ni-layout-faq {
+  height: 100%;
+  width: 100%;
+  padding: 5%; 
+  padding-left: 100px;
+  padding-right: 100px; 
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3);
+}
+
+:root .ni-layout-faq-question {
+  height: 100%;
+  width: 100%;
+  font-size: var(--number-layout-faq-question);
+  font-weight:bolder; 
+  text-align: left;
+  padding-left: 0px;
+  padding-right: 0px; 
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3);
+}
+
+:root .ni-layout-faq-answer {
+  height: 100%;
+  width: 100%;
+  font-size: var(--number-layout-faq-answer);
+  padding-left: 15px;
+  padding-right: 0px;
+  text-align: left; 
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-alter-color3);
+}
+/* END FAQ */
+
+
+/* START COMPONENT CARDS */
+:root .ni-layout-card-text {
+  color: var(--color-theme-main-background);
+  padding: var(--number-card-padding);
+  width: 50%
+}
+
+:root .ni-layout-card-image {
+  color: var(--color-theme-main-background);
+  padding: var(--number-card-padding);
+  width: 200px;
+  height: 240px;
+}
+
+:root .btn-primary-card {
+  color: var(--color-theme-basic-color4);
+  background-color: var(--color-theme-basic-color2);
+  border: none;
+}
+
+:root .btn-primary-card:hover {
+  background-color: var(--color-theme-basic-color1);
+  color:var(--color-theme-basic-color3);
+}
+/* END COMPONENT CARDS */
+
+
+:root .ni-layout-title {
+  margin: 0px;
+  font-size: var(--number-layout-title);
+  font-weight: bolder; 
+  width: 100%;
+}
+
+:root .ni-layout-subtitle {
+  margin: 0px;
+  font-size: var(--number-layout-subtitle);
+  font-weight: bolder; 
+  /* line-height: 300%; */
+}
+
+:root .ni-layout-logo {
+  height: var(--number-product-logo-height);
+}
+
+:root .ni-layout-image:hover {
+  opacity: 1;
+}
+
+:root .ni-layout-text {
+  color: var(--color-theme-main-background);
+  margin: 0px;
+  text-align: left;
+}
+
+:root .ni-layout-highlight {
+  padding-right: 40% !important;
+  background-color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-main .ni-layout-title {
+  color: var(--color-theme-basic-color1);
+}
+
+:root .ni-layout-highlight .ni-layout-title {
+  color: var(--color-theme-basic-color2);
+  text-align: left;
+}
+
+:root .ni-layout-list {
+  padding-bottom: var(--number-list-padding);
+}
+
+:root .ni-layout-home-block-left {
+  text-align: left;
 }
 
 

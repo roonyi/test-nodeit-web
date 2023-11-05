@@ -6,11 +6,11 @@ export const HeaderMenu = (props) => {
     const MenuBar = (props) => {
         console.log("props.fixed en MenuBar: ",props.fixed)
         return (
-            <section ref={props.refProps} className={'ni-layout-bar'}>
+            <section ref={props.refProps} className={'ni-layout-bar-header'}>
                 <Flex 
                     justify={Flex.justify.SPACE_BETWEEN} 
                     align={Flex.justify.CENTER} 
-                    className={'ni-layout-bar'} 
+                    className={'ni-layout-bar-header'} 
                     direction={Flex.directions.ROW} 
                     gap={Flex.gaps.SMALL} >
                     <Container fluid>

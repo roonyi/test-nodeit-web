@@ -53,11 +53,11 @@ export const Home = (props) => {
                                 </Flex>
                         </Col>
                         <Col >
-                        <Flex
+                            <Flex
                                 gap={Flex.gaps.MEDIUM}
                                 // className={'ni-layout-home-intro-right'}
                                 direction={Flex.directions.COLUMN}>   
-                            <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>    
+                                <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>    
                             </Flex>
                         </Col>
                     </Row>    
@@ -138,7 +138,7 @@ export const Home = (props) => {
             <Flex 
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-home'} 
+                className={'ni-layout-general'} 
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
                 <Container fluid
