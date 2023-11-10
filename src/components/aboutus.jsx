@@ -17,7 +17,7 @@ export const Aboutus = (props) => {
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-home-intro'} 
                 direction={Flex.directions.ROW}
-                gap={Flex.gaps.SMALL} 
+                gap={Flex.gaps.MEDIUM} 
                 >
                 <Container fluid
                     >

@@ -1,16 +1,39 @@
-import { Flex, Box, Button } from 'monday-ui-react-core';
-import React, { useRef } from "react";
+import { Flex, Box, Button, Slider } from 'monday-ui-react-core';
+import React, { useState, useRef } from "react";
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
 import { FooterMenu } from "./footer"; 
 //import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
+// import Carousel from 'react-bootstrap/Carousel';
 
 export const Home = (props) => {
     console.log("props.header", props.header)
+    // Constant for the Carousels
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+          },
+          desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3
+          },
+          tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+          },
+          mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+          }
+      };
     
-    const viewRef = {
+      const viewRef = {
         menu: useRef(),
         footer: useRef(),
         products: useRef()
@@ -85,7 +108,8 @@ export const Home = (props) => {
     };
 
     const HomeApproach_cards = (props) => {
-        console.log("props.content?.approach_cards.component?.elements: ", props.content?.approach_cards.component?.elements)
+        console.log("props.content?.approach_cards.component?.elements: r1 ", props.content?.approach_cards.component?.elements)
+        
         return (
             <Flex 
                 justify={Flex.justify.CENTER} 
@@ -96,9 +120,40 @@ export const Home = (props) => {
                 <Container fluid
                     align={Flex.justify.CENTER}
                     >
-                    <Row >   
-                        <WebContent info={props.content?.approach_cards.component?.elements} alterClassHint={'card'}/>
-                    </Row>
+                    {/* <Carousel>                        
+                       {props.content?.approach_cards.component?.elements?.map((element) => {
+                        let card_content0 = element.content.split("##");
+                        return(
+                        <Carousel.Item>
+                            <div className='card' style={{height: '300px', width:'200px'}}>
+                                            <img src= {element.files[0]} className={`ni-layout-card-image`}/>
+                                            <div className='card-body'>
+                                                <h5 className='card-title'>{card_content0[0]}</h5>
+                                                <h6 className='card-text'>{card_content0[1]}</h6>
+                                            </div>
+                            </div>
+                        </Carousel.Item> 
+                        )
+                            })}
+                    </Carousel> */}
+                    
+                    <Carousel 
+                    responsive={responsive}
+                    infinite={true}
+                    >
+                        {props.content?.approach_cards.component?.elements?.map((element) => {
+                        let card_content0 = element.content.split("##");
+                        return(
+                            <div className='card' style={{height: '300px', width:'200px'}}>
+                                            <img src= {element.files[0]} className={`ni-layout-card-image`}/>
+                                            <div className='card-body'>
+                                                <h5 className='card-title'>{card_content0[0]}</h5>
+                                                <h6 className='card-text'>{card_content0[1]}</h6>
+                                            </div>
+                            </div>
+                        )
+                            })}                    
+                    </Carousel>
                 </Container>
             </Flex>
         );

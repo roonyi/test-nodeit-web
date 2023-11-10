@@ -124,7 +124,47 @@ export const WebContent = (props) => {
                              {/* </Flex> */}
                             </Col>
                         );
-                    case 'Card':
+                        case 'Carousel':
+                            console.log("element.sequence", element.sequence)
+                            let caro_cont = element.content.split("##")
+                            return (
+                                <Col>
+                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div className='card' style={{height: '300px', width:'200px'}}>
+                                            <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
+                                            <div className='card-body'>
+                                                <h5 className='card-title'>{caro_cont[0]}</h5>
+                                                <h6 className='card-text'>{caro_cont[1]}</h6>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div className='card' style={{height: '300px', width:'200px'}}>
+                                            <img src={element.files[0]} className={`ni-layout${alterClass}-image${styleClass}`} />
+                                            <div className='card-body'>
+                                                <h5 className='card-title'>{caro_cont[0]}</h5>
+                                                <h6 className='card-text'>{caro_cont[1]}</h6>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        {/* <div class="carousel-item">
+                                        <img class="d-block w-100" src="..." alt="Third slide">
+                                        </div> */}
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                    </div>
+                                </Col>
+                            );
+                        case 'Card':
                         let card_cont = element.content.split("##")
                         return (
                             <Col>

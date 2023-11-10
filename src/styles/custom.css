@@ -120,17 +120,21 @@
 }
 
 :root .ni-layout-home-intro,
+:root .ni-layout-faq-intro,
 :root .ni-layout-home-approach,
 :root .ni-layout-wwa-approach,
 :root .ni-layout-home-products,
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
+:root .ni-layout-faq-question,
+:root .ni-layout-faq-answer,
 :root .ni-layout-faq {
   margin: 0px;
   font-family: Comfortaa;
 }
 
 :root .ni-layout-home-intro,
+:root .ni-layout-faq-intro,
 :root .ni-layout-home-approach,
 :root .ni-layout-wwa-approach,
 :root .ni-layout-main,
@@ -361,26 +365,37 @@
   color: var(--color-theme-basic-color1);
 }
 
-
 /* END ABOUT US */
 
 
 /* START FAQ */
+:root .ni-layout-faq-intro {
+  text-align: center;
+  line-height: 300%;
+  margin-bottom: 3%;
+  border-bottom: 0%;
+  padding-bottom: 0%;
+}
+
 :root .ni-layout-faq {
   height: 100%;
   width: 100%;
   padding: 5%; 
-  padding-left: 100px;
+  padding-left: 10%;
   padding-right: 100px; 
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3);
+}
+
+:root .ni-layout-faq-block {
+  width: 100%;
 }
 
 :root .ni-layout-faq-question {
   height: 100%;
   width: 100%;
   font-size: var(--number-layout-faq-question);
-  font-weight:bolder; 
+  /* font-weight:bolder;  */
   text-align: left;
   padding-left: 0px;
   padding-right: 0px; 
@@ -392,7 +407,7 @@
   height: 100%;
   width: 100%;
   font-size: var(--number-layout-faq-answer);
-  padding-left: 15px;
+  /* padding-left: 15px; */
   padding-right: 0px;
   text-align: left; 
   background-color: var(--color-theme-basic-color3);
@@ -425,6 +440,16 @@
   background-color: var(--color-theme-basic-color1);
   color:var(--color-theme-basic-color3);
 }
+
+:root .carousel-inner {
+  /* display: flex; */
+  padding: 1em;
+}
+
+:root .card-wrapper {
+  display: flex;
+}
+
 /* END COMPONENT CARDS */
 
 

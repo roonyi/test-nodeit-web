@@ -4,6 +4,8 @@ import { HeaderMenu } from "./header";
 import { FooterMenu } from "./footer"; 
 //import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 export const Faq = (props) => {
     console.log("props.header", props.header)
@@ -19,15 +21,17 @@ export const Faq = (props) => {
         console.log("props.content?.faq_title.component?.elements: ", props.content?.title.component?.elements)
         return (
             <Flex
-                justify={Flex.justify.START} 
-                align={Flex.justify.START} 
-                className={'ni-layout-home-intro'} 
-                direction={Flex.directions.ROW}
+                justify={Flex.justify.CENTER} 
+                align={Flex.justify.CENTER} 
+                className={'ni-layout-faq-intro'} 
+                direction={Flex.directions.COLUMN}
                 gap={Flex.gaps.SMALL}   
                 >
-                <FaqBlock detail={props.content?.title.component?.elements} 
-                contentClassName={'ni-layout-home-intro-title-text'}
-                />                
+                <Container fluid>
+                    <Col>
+                        <WebContent info={props.content?.title.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
+                    </Col>
+                </Container>
             </Flex>
             
         );
@@ -40,10 +44,15 @@ export const Faq = (props) => {
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-faq'} 
-                direction={Flex.directions.ROW}
+                direction={Flex.directions.COLUMN}
                 gap={Flex.gaps.SMALL} >
-                <FaqBlock detail={props.content?.questions.component?.elements} alterClassHint={'faq'}/>
-
+                <Container fluid>
+                    <Col>
+                        <Box className={'ni-layout-faq-block'}>                    
+                            <WebContent info={props.content?.questions.component?.elements} alterClassHint={'faq'}/>
+                        </Box>
+                    </Col>
+                </Container>
             </Flex>
         );
     };
@@ -58,11 +67,15 @@ export const Faq = (props) => {
                 className={'ni-layout-general'} 
                 direction={Flex.directions.COLUMN} 
                 gap={Flex.gaps.NONE} >
-                <HeaderMenu content={props.header} />
-                <FaqIntro content={props.faq} />
-                <Faq content={props.faq} />
-                <FooterMenu content={props.footer} />
-
+                <Container fluid
+                >
+                <Row >
+                    <HeaderMenu content={props.header} />
+                    <FaqIntro content={props.faq} />
+                    <Faq content={props.faq} />
+                    <FooterMenu content={props.footer} />
+                </Row>
+                </Container>
             </Flex>
     );
 }
