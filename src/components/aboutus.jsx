@@ -43,7 +43,7 @@ export const Aboutus = (props) => {
                 <Container fluid
                     >
                     <Row >    
-                        <Col sm="4"
+                        <Col sm="3"
                         className={'ni-layout-wwa-intro-left'}
                         >
                             <Flex
@@ -143,7 +143,7 @@ export const Aboutus = (props) => {
                 <Container fluid
                 align={Flex.justify.CENTER}>
                     <Row>
-                        <Col sm="3" lg="3" md="12">
+                        <Col sm="4" lg="3" md="12">
                             <Flex
                             className={'ni-layout-home-products'} 
                             direction={Flex.directions.COLUMN}
@@ -151,7 +151,7 @@ export const Aboutus = (props) => {
                                 <WebContent info={props.content?.team_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
                             </Flex>
                         </Col>
-                        <Col lg="9">
+                        <Col lg="9" >
                             {/* <WebContent info={props.content?.team.component?.elements} alterClassHint={'card'}/> */}
                             {props.content?.team.component?.elements && 
                             <Carousel 
@@ -169,7 +169,7 @@ export const Aboutus = (props) => {
                             removeArrowOnDeviceType={["superLargeDesktop","desktop"]}
                             >
                                 {
-                                props.content?.approach_cards.component?.elements?.map((element) => {
+                                props.content?.team.component?.elements?.map((element) => {
                                 let elementArray = [element];
                                 return (<WebContent info={elementArray} alterClassHint={'card'}/>)
                                     })

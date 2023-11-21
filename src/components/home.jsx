@@ -65,11 +65,11 @@ export const Home = (props) => {
                 <Container fluid
                     >
                     <Row >    
-                        <Col sm="5" 
+                        <Col sm="5"
                         className={'ni-layout-home-intro-left'}
                          >                            
                                 <Flex
-                                gap={Flex.gaps.LARGE}
+                                gap={Flex.gaps.SMALL}
                                 // className={'ni-layout-home-intro-left'}
                                 direction={Flex.directions.COLUMN}>      
                                     <WebContent info={props.content?.intro_left.component?.elements} contentClassName={'ni-layout-home-intro-title-text'}/>
@@ -77,7 +77,7 @@ export const Home = (props) => {
                         </Col>
                         <Col >
                             <Flex
-                                gap={Flex.gaps.MEDIUM}
+                                gap={Flex.gaps.SMALLM}
                                 // className={'ni-layout-home-intro-right'}
                                 direction={Flex.directions.COLUMN}>   
                                 <WebContent info={props.content?.intro_right.component?.elements} contentClassName={'ni-layout-home-intro-title-img'}/>    
