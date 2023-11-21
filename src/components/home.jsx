@@ -136,24 +136,29 @@ export const Home = (props) => {
                         )
                             })}
                     </Carousel> */}
-                    
+                    {console.log('element_cards1',props.content?.approach_cards.component?.elements, props.content?.approach_cards.component?.elements.length)}
+                    {props.content?.approach_cards.component?.elements && 
                     <Carousel 
                     responsive={responsive}
                     infinite={true}
+                    // autoPlay={true}
+                    // autoPlaySpeed={3000}
+                    arrows={true}
+                    showDots={true}
+                    // sliderClass={'carousel'}
+                    containerClass={'carousel-container'}
+                    dotListClass={'carousel-dotlist'}
+                    // renderDotsOutside={true}
+                    // removeArrowOnDeviceType={["desktop", "mobile", "tablet" ]}
+                    // customLeftArrow={'<'}
                     >
-                        {props.content?.approach_cards.component?.elements?.map((element) => {
-                        let card_content0 = element.content.split("##");
-                        return(
-                            <div className='card' style={{height: '300px', width:'200px'}}>
-                                            <img src= {element.files[0]} className={`ni-layout-card-image`}/>
-                                            <div className='card-body'>
-                                                <h5 className='card-title'>{card_content0[0]}</h5>
-                                                <h6 className='card-text'>{card_content0[1]}</h6>
-                                            </div>
-                            </div>
-                        )
-                            })}                    
-                    </Carousel>
+                        {
+                        props.content?.approach_cards.component?.elements?.map((element) => {
+                        let elementArray = [element];
+                        return (<WebContent info={elementArray} alterClassHint={'card'}/>)
+                            })
+                        }
+                    </Carousel>}
                 </Container>
             </Flex>
         );
