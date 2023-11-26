@@ -8,7 +8,6 @@ import { Home } from '/src/components/home';
 import { Aboutus } from '/src/components/aboutus';
 import { Faq } from '/src/components/faq';
 //import { Pricing } from '/src/components/pricing';
-//import { Faq } from '/src/components/faq';
 //import { Messenger } from '/src/components/messenger';
 //import { Workdoc } from './components/workdoc';
 
@@ -38,17 +37,14 @@ function App() {
     setDetail(buildDetail);
   }, [board])
     console.log('detail app.jsx: ', detail);
-  
+
   return (
     <BrowserRouter>
        <Routes>
         <Route path="/" element={<Home header={detail?.header} footer={detail?.footer} home={detail?.home} />} />
         <Route path="/aboutus" element={<Aboutus header={detail?.header} footer={detail?.footer} aboutus={detail?.aboutus} />} />
         <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
-{/*        <Route path="/pricing" element={<Pricing header={detail?.header} footer={detail?.footer} pricing={detail?.pricing} />}/>
-        <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />}   />
-        <Route path="/privacy" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={'privacy'} />}/>
-        <Route path="/contact" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={'contact'} />} />
+{/*     <Route path="/pricing" element={<Pricing header={detail?.header} footer={detail?.footer} pricing={detail?.pricing} />}/>
         <Route path="*" element={<Messenger message={'notFound'} />} /> */}
       </Routes>
     </BrowserRouter>

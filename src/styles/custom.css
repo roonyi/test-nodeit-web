@@ -107,7 +107,9 @@
   height: 100vh;
   width: 100%;
   color: var(--color-theme-main-background);
-  background-color: var(--color-theme-basic-color1);
+  /* background-color: var(--color-theme-basic-color1); */
+  background: linear-gradient(164deg, #8511EC 47.55%, #4F0D8A 90.31%);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
 }
 
 :root .ni-layout-home, 
@@ -286,6 +288,7 @@
   /* font-size: var(--number-layout-subtitle); */
   background-color: var(--color-theme-basic-color3);
   color: var(--color-theme-alter-color3)
+
 }
 
 :root .ni-layout-home-products-title {

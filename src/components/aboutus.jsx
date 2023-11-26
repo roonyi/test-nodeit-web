@@ -1,4 +1,5 @@
 import { Flex, Box, Button } from 'monday-ui-react-core';
+import React, { useState, useRef } from "react";
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
 import { FooterMenu } from "./footer"; 
@@ -29,6 +30,15 @@ export const Aboutus = (props) => {
             items: 1
           }
       };
+    
+    const viewRef = {
+        menu: useRef(),
+        footer: useRef()
+    };
+
+    const scrollCallBack = (view) => {
+        viewRef[view]?.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const AboutusIntro = (props) => {
         console.log("props.content?.who_we_are_left.component?.elements: ", props.content?.who_we_are_left.component?.elements)
@@ -195,12 +205,12 @@ export const Aboutus = (props) => {
                 <Container fluid
                 >
                 <Row >
-                    <HeaderMenu content={props.header} />
+                    <HeaderMenu refProps={viewRef.menu} scrollCallBack={scrollCallBack} content={props.header} />
                     <AboutusIntro content={props.aboutus} />
                     <AboutusApproach_title content={props.aboutus} />
                     <AboutusApproach_cards content={props.aboutus} />
                     <AboutusTeam content={props.aboutus} />
-                    <FooterMenu content={props.footer} />
+                    <FooterMenu refProps={viewRef.footer} scrollCallBack={scrollCallBack} content={props.footer} />
                 </Row>    
                 </Container>
             </Flex>

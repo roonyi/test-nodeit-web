@@ -31,9 +31,9 @@ export const Home = (props) => {
             breakpoint: { max: 464, min: 0 },
             items: 1
           }
-      };
+      };8
     
-      const viewRef = {
+    const viewRef = {
         menu: useRef(),
         footer: useRef(),
         products: useRef()
@@ -108,7 +108,7 @@ export const Home = (props) => {
     };
 
     const HomeApproach_cards = (props) => {
-        console.log("props.content?.approach_cards.component?.elements: r1 ", props.content?.approach_cards.component?.elements)
+        // console.log("props.content?.approach_cards.component?.elements: r1 ", props.content?.approach_cards.component?.elements)
         
         return (
             <Flex 
@@ -152,8 +152,10 @@ export const Home = (props) => {
     };
 
     const HomeProducts = (props) => {
-        console.log("props.content?.products_title.component?.elements: ", props.content?.products_title.component?.elements)
+        console.log("HomeProducts scroll: ", props)
         return (
+            // (props.scrollCallBack !== undefined) &&
+            // <section ref={props.refProps} className={'ni-layout-home-products'}>
             <Flex  
                 justify={Flex.justify.CENTER} 
                 align={Flex.justify.CENTER} 
@@ -163,10 +165,11 @@ export const Home = (props) => {
                 >
                 <Container fluid
                 align={Flex.justify.CENTER}
+                ref={props.refProps}
                 >
                         <Row >   
                             <Col lg="3">
-                                <WebContent info={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'}/>
+                                <WebContent info={props.content?.products_title.component?.elements} contentClassName={'ni-layout-home-products-title'} scrollCallBack={props.scrollCallBack}/>
                             </Col>
                             {/* <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/> */}
                             <Col lg="9">
@@ -196,6 +199,7 @@ export const Home = (props) => {
                         </Row>
                 </Container>
             </Flex>
+            // </section>
         );
     };
 

@@ -6,25 +6,26 @@ export const HeaderMenu = (props) => {
     const MenuBar = (props) => {
         console.log("props.fixed en MenuBar: ",props.fixed)
         return (
-            <section ref={props.refProps} className={'ni-layout-bar-header'}>
+            // <section ref={props.refProps} className={'ni-layout-bar-header'}>
                 <Flex 
                     justify={Flex.justify.SPACE_BETWEEN} 
                     align={Flex.justify.CENTER} 
                     className={'ni-layout-bar-header'} 
                     direction={Flex.directions.ROW} 
-                    gap={Flex.gaps.SMALL} >
+                    gap={Flex.gaps.SMALL} 
+                    ref={props.refProps}>
                     <Container fluid>
                         <Row >
                             <Col  sm="2">
-                                <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} className={'ni-layout-bar-header-logo'}/>
+                                <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} className={'ni-layout-bar-header-logo'}  scrollCallBack={props.scrollCallBack}/>
                             </Col>
                             <Col className={'ni-layout-bar-header-link'} >
-                                <WebContent info={props.fixed?.links.component?.elements} alterClassHint={'bar'} />
+                                <WebContent info={props.fixed?.links.component?.elements} alterClassHint={'bar'} scrollCallBack={props.scrollCallBack}/>
                             </Col>
                         </Row>
                     </Container>
                 </Flex>
-            </section>
+            // </section>
         );
     }
 

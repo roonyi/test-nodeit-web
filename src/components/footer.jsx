@@ -11,6 +11,7 @@ export const FooterMenu = (props) => {
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-bar-footer'} 
                 direction={Flex.directions.ROW} 
+                ref={props.refProps}
                 >
                 <Container fluid>
                     <Row>
@@ -19,7 +20,7 @@ export const FooterMenu = (props) => {
                                     className={'ni-layout-bar-footer-logo'}    
                                     direction={Flex.directions.COLUMN} 
                                     >
-                                    <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} {...props}/>
+                                    <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} {...props} scrollCallBack={props.scrollCallBack}/>
                                 </Flex>    
                         </Col>
                         <Col xs={6} lg={2} md={2}>
@@ -27,7 +28,7 @@ export const FooterMenu = (props) => {
                                 // className={'ni-layout-bar-footer'} 
                                 direction={Flex.directions.COLUMN} 
                                 >
-                                <WebContent info={props.fixed?.links_vertical_block_left.component?.elements} contentClassName={'ni-layout-text-footer'} /> 
+                                <WebContent info={props.fixed?.links_vertical_block_left.component?.elements} contentClassName={'ni-layout-text-footer'} scrollCallBack={props.scrollCallBack}/> 
                                 </Flex>
                         </Col>
                         <Col xs={6} lg={2} md={2}>
@@ -35,7 +36,7 @@ export const FooterMenu = (props) => {
                                 // className={'ni-layout-bar-footer'} 
                                 direction={Flex.directions.COLUMN} 
                                 >
-                                <WebContent info={props.fixed?.links_vertical_block_right.component?.elements} contentClassName={'ni-layout-text-footer'} />
+                                <WebContent info={props.fixed?.links_vertical_block_right.component?.elements} contentClassName={'ni-layout-text-footer'} scrollCallBack={props.scrollCallBack}/>
                             </Flex>
                         </Col>
                     </Row>

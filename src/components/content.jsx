@@ -34,11 +34,13 @@ export const WebContent = (props) => {
                 <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
             )
         } else {
+            let linkContent = props.element.link.split("#")
             if (props.element.render === 'Asset') {
-                // console.log("props.element.link",props.element.link, props)
+                console.log("props.element.link", props.element.link)
                 return (
-                    <RouteLink to={props.element.link} >
-                        <Clickable onClick={()=> props.scrollCallBack('menu')}> 
+                    // <RouteLink to={props.element.link} >
+                    <RouteLink to={linkContent[0]} >
+                        <Clickable onClick={() => props.scrollCallBack(linkContent[1])}> 
                             <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
                         </Clickable>
                     </RouteLink>
@@ -72,12 +74,21 @@ export const WebContent = (props) => {
                             text={element.content}
                           />);
                     case 'Link':
-                        return (
-                            <RouteLink key={element.key} to={element.link} state={{entry: element}} 
+                        let linkContent = element.link.split("#")
+                        console.log("element.link", element.link)
+                        return ( 
+                            <RouteLink 
+                            key={element.key} 
+                            to={linkContent[0]} 
+                            state={{entry: element}} 
                             className={`ni-layout${alterClass}-link${styleClass}`} 
-                            //smooth={true} onClick={scroll.scrollTo('/#myproducts')}
+                            onClick={() => props.scrollCallBack(linkContent[1])}
+                            // onClick={() => alert("texto")}
                             >
-                                {element.name}
+                                {/* <Clickable onClick={() => props.scrollCallBack(linkContent[1])}> */}
+                                {/* <Clickable onClick={() => alert("texto")}>  */}
+                                    {element.name}
+                                {/* </Clickable> */}
                             </RouteLink>
                         );
                     case 'Link_newpage':
@@ -144,7 +155,7 @@ export const WebContent = (props) => {
             })
         );
     }
-    // console.log("props.info in weblist content: **", props.info, props)
+    console.log("props.info in weblist content: **", props.info, props)
     return (
         <WebList {...props} />
     );
