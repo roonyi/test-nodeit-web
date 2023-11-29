@@ -39,7 +39,7 @@ export const WebContent = (props) => {
                 console.log("props.element.link", props.element.link)
                 return (
                     // <RouteLink to={props.element.link} >
-                    <RouteLink to={linkContent[0]} >
+                    <RouteLink  to={linkContent[0]}>
                         <Clickable onClick={() => props.scrollCallBack(linkContent[1])}> 
                             <img src={props.element.files[0]} className={`ni-layout${props.alterClass}-image${props.styleClass}`} />
                         </Clickable>
@@ -75,12 +75,14 @@ export const WebContent = (props) => {
                           />);
                     case 'Link':
                         let linkContent = element.link.split("#")
-                        console.log("element.link", element.link)
+                        console.log("from_scroll_content", linkContent[1])
                         return ( 
                             <RouteLink 
                             key={element.key} 
-                            to={linkContent[0]} 
-                            state={{entry: element}} 
+                            to={linkContent[0]}
+                            // to={element.link}
+                            // state={{from: linkContent[1]}} 
+                            state={linkContent[1]} 
                             className={`ni-layout${alterClass}-link${styleClass}`} 
                             onClick={() => props.scrollCallBack(linkContent[1])}
                             // onClick={() => alert("texto")}

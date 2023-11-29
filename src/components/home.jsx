@@ -1,5 +1,6 @@
 import { Flex, Box, Button, Slider } from 'monday-ui-react-core';
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from 'react-router-dom'
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
 import { FooterMenu } from "./footer"; 
@@ -12,6 +13,17 @@ import "react-multi-carousel/lib/styles.css";
 
 export const Home = (props) => {
     console.log("props.header", props.header)
+    
+    const location = useLocation()
+    const  from  = location.state
+    
+    useEffect(() => { 
+        // (from !== null ) &&
+        scrollCallBack(from)
+      }, [from])
+    console.log('from_scroll_use: ', from);
+    
+    
     // Constant for the Carousels
     const responsive = {
         superLargeDesktop: {
