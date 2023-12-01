@@ -224,7 +224,7 @@ export const Home = (props) => {
             //console.log("prop.header", props.header)
             // <Container 
             // className={'ni-layout-home'}
-            // >
+            // > nodeit
             <Flex 
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
