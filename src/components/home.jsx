@@ -14,15 +14,27 @@ import "react-multi-carousel/lib/styles.css";
 export const Home = (props) => {
     console.log("props.header", props.header)
     
-    const location = useLocation()
-    const  from  = location.state
-    
+    const viewRef = {
+        menu: useRef(),
+        footer: useRef(),
+        products: useRef()
+    };
+
+    const scrollCallBack = (view) => {
+        viewRef[view]?.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const location = useLocation();
+    const  from  = location.state;
     useEffect(() => { 
-        // (from !== null ) &&
-        scrollCallBack(from)
-      }, [from])
-    console.log('from_scroll_use: ', from);
+        if (from !== null ) {
+            console.log('viewRef[view]: ',viewRef[from])
+            scrollCallBack('products');
+        }
+      },[from]);
     
+   
+    console.log('from_scroll_use: ', from);
     
     // Constant for the Carousels
     const responsive = {
@@ -43,17 +55,7 @@ export const Home = (props) => {
             breakpoint: { max: 464, min: 0 },
             items: 1
           }
-      };8
-    
-    const viewRef = {
-        menu: useRef(),
-        footer: useRef(),
-        products: useRef()
-    };
-
-    const scrollCallBack = (view) => {
-        viewRef[view]?.current?.scrollIntoView({ behavior: 'smooth' });
-    };
+      };
 
     const HomeIntro = (props) => {
 /*        let intros = props.content?.intro.component?.elements
@@ -165,6 +167,7 @@ export const Home = (props) => {
 
     const HomeProducts = (props) => {
         console.log("HomeProducts scroll: ", props)
+        
         return (
             // (props.scrollCallBack !== undefined) &&
             // <section ref={props.refProps} className={'ni-layout-home-products'}>
@@ -214,8 +217,8 @@ export const Home = (props) => {
             // </section>
         );
     };
-
-    return (
+    
+      return (
         //(props.home === undefined) ? 
             //<Messenger message={'loader'} /> :
             //console.log("prop.header", props.header)
