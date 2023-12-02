@@ -175,7 +175,7 @@ const getAssets = (ids, assets) => {
     if (ids !== null && assets !== null) {
         const obj = JSON.parse(ids);
         const files = JSON.parse(ids).files;
-        const idList = files.map((file) => {
+        const idList = files?.map((file) => {
             return file.assetId
         });
         const list = assets.filter((asset) => {

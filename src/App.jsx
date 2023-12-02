@@ -16,7 +16,7 @@ let fetchControl = false;
 
 function App() {
   //const [board, setBoard] = useState(undefined);
-  const [board, setBoard] = useLocalStorage('2p-web_board', { fetch: false });
+  const [board, setBoard] = useLocalStorage('nodeit', { fetch: false });
   const [detail, setDetail] = useState(undefined);
 
   useEffect(() => {
@@ -42,7 +42,10 @@ function App() {
     <BrowserRouter>
        <Routes>
         <Route path="/" element={<Home header={detail?.header} footer={detail?.footer} home={detail?.home} />} />
-        <Route path="/aboutus" element={<Aboutus header={detail?.header} footer={detail?.footer} aboutus={detail?.aboutus} />} />
+        {/* <Route path="/aboutus" element={<Aboutus header={detail?.header} footer={detail?.footer} aboutus={detail?.aboutus} />} /> */}
+        <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
+        <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
+        <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
         <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
 {/*     <Route path="/pricing" element={<Pricing header={detail?.header} footer={detail?.footer} pricing={detail?.pricing} />}/>
         <Route path="*" element={<Messenger message={'notFound'} />} /> */}
