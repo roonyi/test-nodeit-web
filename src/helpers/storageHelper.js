@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
  * @return {Array} useState objects (value, setValue) to be used in component
  */
 export const useLocalStorage = (storageKey, fallbackState) => {
-    localStorage.removeItem(storageKey);
+    // localStorage.removeItem(storageKey);
     const localState = localStorage.getItem(storageKey) ?? JSON.stringify(fallbackState);
     const [value, setValue] = useState(JSON.parse(localState));
 

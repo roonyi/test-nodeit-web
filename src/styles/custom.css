@@ -180,7 +180,7 @@
 
 :root .ni-layout-bar-header-link {
   text-align: right !important;
-  background-color: var(--color-theme-alter-color1);
+  /* background-color: var(--color-theme-alter-color1); */
   margin: 4%;
   color: var(--color-theme-main-foreground);
   width: 100%;
@@ -263,8 +263,10 @@
 :root .ni-layout-home-approach {
   height: 100%;
   width: 100%;
-  font-size: var(--number-layout-title);
+  /* font-size: var(--number-layout-title); */
   font-weight: bolder; 
+  padding-right: 3%;
+  padding-left: 2%;
   background-color: var(--color-theme-basic-color2);
   color: var(--color-theme-basic-color1);
 }
@@ -273,6 +275,7 @@
   height: 100%;
   width: 100%;
   padding-top: 5%;
+  padding-bottom: 3%;
   margin-left: auto !important;
   margin-right: auto !important;
   line-height: 150%;

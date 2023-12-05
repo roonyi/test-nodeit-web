@@ -19,7 +19,10 @@ export const HeaderMenu = (props) => {
                             <Col  sm="2">
                                 <WebContent info={props.fixed?.logo.component?.elements} alterClassHint={'bar'} className={'ni-layout-bar-header-logo'}  scrollCallBack={props.scrollCallBack}/>
                             </Col>
-                            <Col className={'ni-layout-bar-header-link'} >
+                            <Col 
+                            // sm="5"
+                            className={'ni-layout-bar-header-link'} 
+                            >
                                 <WebContent info={props.fixed?.links.component?.elements} alterClassHint={'bar'} scrollCallBack={props.scrollCallBack}/>
                             </Col>
                         </Row>

@@ -188,7 +188,8 @@ export const Home = (props) => {
                             </Col>
                             {/* <WebContent info={props.content?.products.component?.elements} alterClassHint={'card'}/> */}
                             <Col lg="9">
-                            {props.content?.approach_cards.component?.elements && 
+                                <WebContent info={props.content?.products.component?.elements} contentClassName={'ni-layout-home-products-title'} />
+                            {/* {props.content?.approach_cards.component?.elements && 
                             <Carousel 
                             responsive={responsive}
                             infinite={true}
@@ -209,7 +210,7 @@ export const Home = (props) => {
                                 return (<WebContent info={elementArray} alterClassHint={'card'}/>)
                                     })
                                 }
-                            </Carousel>}
+                            </Carousel>} */}
                             </Col>
                         </Row>
                 </Container>

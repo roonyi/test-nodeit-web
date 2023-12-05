@@ -151,6 +151,10 @@ export const WebContent = (props) => {
                                 </Button>
                             </RouteLink>
                         );
+                    case 'Paragraph':
+                        return (
+                            <span key={element.key} >{element.content}</span>
+                        );    
                     default:
                         return <span key={element.key} className={styleClass}>{element.name}</span>
                 }
