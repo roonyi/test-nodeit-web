@@ -155,6 +155,12 @@ export const WebContent = (props) => {
                         return (
                             <span key={element.key} >{element.content}</span>
                         );    
+                    // case 'Workdoc':
+                    //     return (
+                    //         <iframe className={'ni-layout-workdoc-info'} src={element.link} title={element.name}>
+                    //              {'Webpage is loading...'}
+                    //         </iframe>
+                    //     );
                     default:
                         return <span key={element.key} className={styleClass}>{element.name}</span>
                 }

@@ -7,6 +7,8 @@ import { buildWebDetail } from '/src/helpers/viewHelper';
 import { Home } from '/src/components/home';
 import { Aboutus } from '/src/components/aboutus';
 import { Faq } from '/src/components/faq';
+import { Workdoc } from '/src/components/workdoc';
+import { Solutions } from '/src/components/solutions';
 //import { Pricing } from '/src/components/pricing';
 //import { Messenger } from '/src/components/messenger';
 //import { Workdoc } from './components/workdoc';
@@ -43,10 +45,12 @@ function App() {
        <Routes>
         <Route path="/" element={<Home header={detail?.header} footer={detail?.footer} home={detail?.home} />} />
         {/* <Route path="/aboutus" element={<Aboutus header={detail?.header} footer={detail?.footer} aboutus={detail?.aboutus} />} /> */}
+        <Route path="/solutions" element={<Solutions header={detail?.header} footer={detail?.footer} solutions={detail?.solutions} />} />
+        <Route path="/howto" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={detail?.workdoc} workdocname={'howto'} />}/>
         <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
         <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
-        <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
-        <Route path="/faq" element={<Faq header={detail?.header} footer={detail?.footer} faq={detail?.faq} />} />
+        <Route path="/termsofservice" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={detail?.workdoc} workdocname={'termsofservice'} />}/>
+        <Route path="/contactus" element={<Workdoc header={detail?.header} footer={detail?.footer} workdoc={detail?.workdoc} workdocname={'contactus'} />}/>
 {/*     <Route path="/pricing" element={<Pricing header={detail?.header} footer={detail?.footer} pricing={detail?.pricing} />}/>
         <Route path="*" element={<Messenger message={'notFound'} />} /> */}
       </Routes>
