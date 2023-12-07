@@ -56,7 +56,7 @@ export const WebContent = (props) => {
     }
       
     const WebList = (props) => {
-        console.log("webcontent12 ", props.info)
+        // console.log("webcontent12 ", props.info)
         return (
             props.info?.map((element) => {
                 switch (element.render) {
@@ -70,7 +70,7 @@ export const WebContent = (props) => {
                         return (<TextWithHighlight
                             key={element.key} 
                             className={styleClass}
-                            highlightTerm={t('solutions.modal.highlight')}
+                            // highlightTerm={t('solutions.modal.highlight')}
                             text={element.content}
                           />);
                     case 'Link':
@@ -114,7 +114,7 @@ export const WebContent = (props) => {
                             </Accordion>
                             );
                     case 'Logo':
-                        return (<img key={element.key} src={element.file[0]} className={`ni-layout${alterClass}-logo${styleClass}`} />);
+                        return (<img key={element.key} src={element.files[0]} className={`ni-layout${alterClass}-logo${styleClass}`} />);
                     case 'Card_btn':
                         let card_cont_btn = element.content.split("##")
                         return (

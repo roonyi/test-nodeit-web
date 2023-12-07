@@ -16,22 +16,22 @@
   --number-layout-faq-answer: 1.2vw;
   /* --number-layout-text: 15px; */
   --number-layout-text: 1.5vw;
-  /* --number-layout-content-padding: 10%; */
-  /* --number-layout-modal-title: 75px; */
-  /* --number-product-padding: 24px; */
-  /* --number-product-logo-height: 2rem; */
-  /* --number-solution-padding: 48px;
+  --number-layout-content-padding: 10%;
+  --number-layout-modal-title: 75px;
+  --number-product-padding: 24px;
+  --number-product-logo-height: 2rem;
+  --number-solution-padding: 48px;
   --number-layout-faq-title: 36px;
-  --number-list-padding: 36px; */
+  --number-list-padding: 36px;
   /* --number-messenger-logo-height: 2rem; */
-  /* --number-solutions-grid-gap: 24px;
+   --number-solutions-grid-gap: 24px;
   --number-solutions-logo-height: 96px;
   --number-solutions-logo-offset: calc(-1*50% + var(--number-solutions-logo-height) * 0.5);
-  --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3); */
-  /* --color-theme-main-foreground: var(--primary-text-color); */
-  --color-theme-main-foreground: var(--color-theme-basic-color3);
+  --number-solutions-card-width: calc((100% - 2 * var(--number-solutions-grid-gap)) /  3);
+  --color-theme-main-foreground: var(--primary-text-color);
+  /* --color-theme-main-foreground: var(--color-theme-basic-color3); */
   --color-theme-main-background: var(--color-theme-basic-color3);
-    /*--color-theme-main-background: var(--primary-background-color);*/
+    --color-theme-main-background: var(--primary-background-color);
   --color-theme-basic-color1: #8511EC;
   --color-theme-basic-color2: #AFFFD3;
   --color-theme-basic-color3: #F6F5FA;
@@ -40,9 +40,9 @@
   --color-theme-alter-color2: #AFFFD3;
   --color-theme-alter-color3: #2E2E2E;
   --color-theme-alter-color4: #313131;
-  /* --color-theme-modif-shade1: #fff9;
+  --color-theme-modif-shade1: #fff9;
   --color-theme-modif-shade2: #5ff3a0ff;
-  --color-theme-modif-shade3: #50e190ff; */
+  --color-theme-modif-shade3: #50e190ff;
 }
 
 /* Additional custom variables */
@@ -104,7 +104,8 @@
 /* START Common style attributes */
 
 :root .ni-layout-general {
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   width: 100%;
   color: var(--color-theme-main-background);
   /* background-color: var(--color-theme-basic-color1); */
@@ -114,6 +115,7 @@
 
 :root .ni-layout-home, 
 :root .ni-layout-product,
+:root .ni-layout-pricing-main,
 :root .ni-layout-solutions {
   padding: 0px;
   margin: 0px;
@@ -133,6 +135,9 @@
 :root .ni-layout-home-products,
 :root .ni-layout-product-info,
 :root .ni-layout-solutions-info,
+:root .ni-layout-solutions-main,
+:root .ni-layout-pricing-main,
+:root .ni-layout-pricing-title,
 :root .ni-layout-faq-question,
 :root .ni-layout-faq-answer,
 :root .ni-layout-faq {
@@ -143,11 +148,13 @@
 :root .ni-layout-home-intro,
 :root .ni-layout-faq-intro,
 :root .ni-layout-home-approach,
+:root .ni-layout-pricing-title,
 :root .ni-layout-wwa-approach,
 :root .ni-layout-main,
 :root .ni-layout-highlight,
 :root .ni-layout-intro,
 :root .ni-layout-solutions-grid,
+:root .ni-layout-pricing-main,
 :root .ni-layout-list {
   padding-left: var(--number-layout-content-padding);
   padding-right: var(--number-layout-content-padding);
@@ -158,6 +165,8 @@
 :root .ni-layout-faq {
   color: var(--color-theme-main-foreground);
   background-color: var(--color-theme-main-background);
+  /* background-color: var(--color-theme-basic-color3); */
+
 }
 /* END Common style attributes */
 
@@ -388,6 +397,35 @@
 /* END ABOUT US */
 
 
+/* START PRICING */
+
+:root .ni-layout-pricing-title {
+  height: 100%;
+  width: 100%;
+  /* font-size: var(--number-layout-title); */
+  /* font-weight: bolder;  */
+  padding-right: 3%;
+  padding-left: 2%;
+  padding-bottom: 3%;
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-basic-color3);
+}
+
+:root .ni-layout-pricing-main {
+  height: 100%;
+  width: 100%;
+  /* font-size: var(--number-layout-title); */
+  /* font-weight: bolder;  */
+  padding-right: 3%;
+  padding-left: 2%;
+  padding-top: 6%;
+  padding-bottom: 13%;
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-basic-color1);
+}
+/* END PRICING */
+
+
 /* START FAQ */
 :root .ni-layout-faq-intro {
   text-align: center;
@@ -605,7 +643,19 @@
 }
 
 
-/* Solutions (card, grid and modal)
+/* Solutions (card, grid and modal) */
+:root .ni-layout-solutions-main {
+  height: 100%;
+  width: 100%;
+  /* font-size: var(--number-layout-title); */
+  /* font-weight: bolder;  */
+  padding-right: 3%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  background-color: var(--color-theme-basic-color3);
+  color: var(--color-theme-basic-color1);
+}
+
 :root .ni-layout-solutions-grid {
   width: 100%;
 }
@@ -701,7 +751,7 @@
 :root .ni-modal-footer-button:hover {
   background-color: var(--color-theme-alter-color1) !important;
   color: var(--color-theme-main-background) !important;
-} */
+}
 
 /* FAQ */
 /* :root .ni-layout-faq-list .ni-layout-list .ni-layout-title {

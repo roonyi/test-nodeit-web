@@ -15,11 +15,12 @@ const SolutionModal = (props) => {
     const SolutionDetail = (props) => {
         return (
             <Box className={'ni-layout-solutions-modal'} >
-                <WebGroup detail={props.solution} contentClassName={'ni-vertical-container'} />
+                {/* <WebGroup detail={props.solution} contentClassName={'ni-vertical-container'} /> */}
+                <WebContent info={props.solution} contentClassName={'ni-vertical-container'} />
             </Box>
         );
     }
-
+    console.log('item:', props.item);
     return (
         (props.item !== undefined) && 
         <Modal 
@@ -28,7 +29,7 @@ const SolutionModal = (props) => {
             onClose={props.onClose} 
             alertDialog={true} 
             hideCloseButton={true} >
-            <ModalHeader title={t('solutions.modal.title')} icon={API} />
+            <ModalHeader title={props.item[1].content} icon={API} />
             <SolutionDetail solution={props.item} refresh={refresh} />
             <ModalFooter>
                 <Flex 
@@ -37,7 +38,7 @@ const SolutionModal = (props) => {
                     className={'ni-vertical-container'} 
                     direction={Flex.directions.ROW} 
                     gap={Flex.gaps.NONE} >
-                    <Button className={'ni-modal-footer-button'} onClick={props.onClose}>{t('solutions.modal.close')}</Button>
+                    <Button className={'ni-modal-footer-button'} onClick={props.onClose}>Close</Button>
                 </Flex>
             </ModalFooter>
         </Modal>
@@ -46,6 +47,9 @@ const SolutionModal = (props) => {
 
 export const Solutions = (props) => {
     const SolutionsCard = (props) => {
+        let intro = [props.detail[0],props.detail[1]];
+        console.log('card',intro);
+        
         return (
             <Clickable 
                 className={'ni-layout-clickable'}
@@ -63,7 +67,8 @@ export const Solutions = (props) => {
                         className={'ni-full-container'} 
                         direction={Flex.directions.COLUMN} 
                         gap={Flex.gaps.SMALL} >
-                        <WebContent info={props.detail.intro} />
+                        {/* <WebContent info={props.detail.intro} /> */}
+                        <WebContent info={intro} />
                     </Flex>
                 </Box>
             </Clickable>
@@ -71,6 +76,7 @@ export const Solutions = (props) => {
     }
 
     const SolutionsGrid = (props) => {
+        console.log('modal',props)
         return (
             <Flex 
                 justify={Flex.justify.CENTER} 
@@ -80,23 +86,15 @@ export const Solutions = (props) => {
                 gap={Flex.gaps.LARGE} 
                 wrap={true} >
                 {
-                    props.list?.map((card) => {
-                        return <SolutionsCard key={card.id} detail={card.detail} callbackShow={props.callbackShow} />
+                    // props.list?.map((card) => {
+                    // return <SolutionsCard key={card.id} detail={card.detail} callbackShow={props.callbackShow} /> 
+                    (props.list !== undefined) &&
+                    Object.values(props?.list).map((value, index) => {                        
+                    if (value.title !== 'Summary') {
+                        return <SolutionsCard key={index} detail={value.component?.elements} callbackShow={props.callbackShow} />
+                    }
                     })
                 }
-            </Flex>
-        );
-    }
-
-    const SolutionsGroup = (props) => {
-        return (
-            <Flex
-                justify={Flex.justify.CENTER} 
-                align={Flex.justify.CENTER} 
-                className={'ni-layout-main'} 
-                direction={Flex.directions.COLUMN} 
-                gap={Flex.gaps.SMALL} >
-                <WebContent info={props.detail.main} />
             </Flex>
         );
     }
@@ -110,20 +108,16 @@ export const Solutions = (props) => {
             setItem(selected);
             setShow(true);
         };
-
+        console.log('props grid', props)
         return (
             <Flex
                 justify={Flex.justify.START} 
                 align={Flex.justify.CENTER} 
-                className={'ni-layout-solutions-info'} 
+                className={'ni-layout-solutions-main'} 
                 direction={Flex.directions.COLUMN} 
-                gap={Flex.gaps.SMALL} >
-                {
-                    props?.content?.dynamic?.map((info) => {
-                        return <SolutionsGroup key={info.id} detail={info.detail} />
-                    })
-                }
-                <SolutionsGrid list={props?.content?.modal} callbackShow={handleShow} />
+                gap={Flex.gaps.LARGE} >
+                <WebContent info={props.content?.summary.component?.elements} />
+                <SolutionsGrid list={props?.content} callbackShow={handleShow} />
                 <SolutionModal item={item} show={show} onClose={handleClose} />
             </Flex>
         );
@@ -137,7 +131,7 @@ export const Solutions = (props) => {
                 align={Flex.justify.CENTER} 
                 className={'ni-layout-solutions'} 
                 direction={Flex.directions.COLUMN} 
-                gap={Flex.gaps.NONE} >
+                gap={Flex.gaps.SMALL} >
                 <HeaderMenu content={props.header} />
                 <SolutionsInfo content={props.solutions} />
                 <FooterMenu content={props.footer} />
