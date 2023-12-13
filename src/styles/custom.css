@@ -769,7 +769,7 @@
 } */
 
 /* Messenger */
-/* :root .ni-messenger-loader,
+:root .ni-messenger-loader,
 :root .ni-messenger-notFound {
   background-position: center;
   background-repeat: no-repeat;
@@ -797,4 +797,4 @@
   object-fit: cover;
   text-align: left;
   object-position: left;
-} */
+}

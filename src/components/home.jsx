@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 //import { Link as RouteLink } from "react-router-dom";
 import { HeaderMenu } from "./header"; 
 import { FooterMenu } from "./footer"; 
-//import Messenger from './messenger'; // for loading porpuses
+import Messenger from './messenger'; // for loading porpuses
 import WebContent from './content';
 import { Container, Row, Col} from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
@@ -220,12 +220,8 @@ export const Home = (props) => {
     };
     
       return (
-        //(props.home === undefined) ? 
-            //<Messenger message={'loader'} /> :
-            //console.log("prop.header", props.header)
-            // <Container 
-            // className={'ni-layout-home'}
-            // > nodeit v2
+        (props.home === undefined) ? 
+            <Messenger message={'loader'} /> :
             <Flex 
                 justify={Flex.justify.SPACE_BETWEEN} 
                 align={Flex.justify.CENTER} 
