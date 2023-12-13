@@ -15,7 +15,7 @@
   /* --number-layout-faq-answer: 15px; */
   --number-layout-faq-answer: 1.2vw;
   /* --number-layout-text: 15px; */
-  --number-layout-text: 1.5vw;
+  --number-layout-text: 1.1vw;
   --number-layout-content-padding: 10%;
   --number-layout-modal-title: 75px;
   --number-product-padding: 24px;
@@ -222,10 +222,23 @@
   width: 100%;
 }
 
+:root .ni-layout-text-footer-on {
+  color: var(--color-theme-main-background);
+  padding: var(--number-block-padding-footer);
+  color: var(--color-theme-basic-color3);
+  padding-bottom: 0%;
+  width: 100%;
+}
+
+:root .ni-layout-footer-image {
+  padding-top: 0%;
+}
+
 :root .ni-layout-bar-footer-image {
   height: var(--number-footer-image-height);
   padding: var(--number-block-padding-footer);
 }
+
 /*  END Footer */
 
 

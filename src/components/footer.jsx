@@ -39,6 +39,14 @@ export const FooterMenu = (props) => {
                                 <WebContent info={props.fixed?.links_vertical_block_right.component?.elements} contentClassName={'ni-layout-text-footer'} scrollCallBack={props.scrollCallBack}/>
                             </Flex>
                         </Col>
+                        <Col xs={6} lg={2} md={2}>
+                            <Flex 
+                                className={'ni-layout-bar-footer-logo'} 
+                                direction={Flex.directions.COLUMN} 
+                                >
+                                <WebContent info={props.fixed?.powerby.component?.elements} contentClassName={'ni-layout-text-footer-on'} scrollCallBack={props.scrollCallBack}/>
+                            </Flex>
+                        </Col>
                     </Row>
                     <Row>
                         <Col xs={8} lg={5} md={5}>
@@ -49,7 +57,7 @@ export const FooterMenu = (props) => {
                                 <WebContent info={props.fixed?.copyright.component?.elements} alterClassHint={'bar'} />
                             </Flex>
                         </Col>
-                        <Col xs={8} lg={7} md={7}>    
+                        <Col xs={8} lg={7} md={7}> 
                             <Flex 
                                 className={'ni-layout-bar-footer-text-cr_sn'}  
                                 direction={Flex.directions.ROW} 
